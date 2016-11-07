@@ -4,4 +4,8 @@
     <string name="button_start">Εκκινηση</string>
     <string name="button_about">Σχετικα</string>
     <string name="button_continue">Συνέχεια</string>
+    <string name="button_login">Συνδεση</string>
+    <string name="button_register">Εγγραφη</string>
+    <string name="text_username">Username</string>
+    <string name="text_password">Password</string>
 </resources>
