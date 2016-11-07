@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1"
+    android:baselineAligned="false">
+
+    <pl.droidsonroids.gif.GifImageView
+        android:layout_width="match_parent"
+        android:layout_height="492dp"
+        android:src="@drawable/giphy"
+        android:background="@android:color/black"
+        android:layout_weight="1.44" />
+
+
+    <Button
+        android:text="@string/button_continue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttonContinue"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:textColorLink="@android:color/black"
+        android:textColorHint="@android:color/background_light" />
+
+
+</LinearLayout>

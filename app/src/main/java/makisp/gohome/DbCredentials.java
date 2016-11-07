@@ -20,6 +20,7 @@ public class DbCredentials extends SQLiteOpenHelper {
     private static final String KEY_USERNAME = "Username";
     private static final String KEY_PASSWORD = "Password";
 
+
     public DbCredentials(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
