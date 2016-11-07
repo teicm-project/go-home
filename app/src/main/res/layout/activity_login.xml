@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="makisp.gohome.LoginActivity"
+    android:background="@drawable/bg">
+
+    <Button
+        android:text="@string/button_login"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="38dp"
+        android:id="@+id/buttonLogin"
+        android:layout_below="@+id/textPassword"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="sans-serif-condensed"
+        style="@style/Widget.AppCompat.Button.Colored" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/textPassword"
+        android:layout_below="@+id/textUsername"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:hint="@string/text_password"
+        android:fontFamily="sans-serif-condensed" />
+
+    <Button
+        android:text="@string/button_register"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:id="@+id/buttonRegister"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:fontFamily="sans-serif-condensed"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/buttonLogin"
+        android:layout_alignStart="@+id/buttonLogin" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:layout_marginTop="59dp"
+        android:id="@+id/textUsername"
+        android:hint="@string/text_username"
+        android:fontFamily="sans-serif-condensed"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+</RelativeLayout>
