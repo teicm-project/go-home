@@ -40,7 +40,7 @@ public class LoginActivity extends AppCompatActivity {
         buttonRegister.setOnClickListener(
                 new Button.OnClickListener(){
                     public void onClick(View v){
-                        startActivity(new Intent(LoginActivity.this,RegisterActivity.class));
+                        //startActivity(new Intent(LoginActivity.this,Register_Activity.class));
                     }
                 }
         );
@@ -57,7 +57,7 @@ public class LoginActivity extends AppCompatActivity {
            cursor.close();
        }
        else{
-           Toast.makeText(LoginActivity.this, "Καλωσήρθες!", Toast.LENGTH_SHORT).show();
+           Toast.makeText(LoginActivity.this, "Καλωσήρθες " + username + "!", Toast.LENGTH_SHORT).show();
            startActivity(new Intent(LoginActivity.this,IntroActivity.class));
            cursor.close();
        }

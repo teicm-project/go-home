@@ -9,6 +9,7 @@ import android.view.View;
 public class MainActivity extends AppCompatActivity {
     public Button buttonAbout;
     public static DbCredentials db;
+    public static DbInventory db2;
 
     public void init() {
 
@@ -25,7 +26,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         db = new DbCredentials(this);
+        db2 = new DbInventory(this);
         db.getWritableDatabase();
+        db2.getWritableDatabase();
 
         Button buttonStart = (Button) findViewById(R.id.buttonStart);
 
