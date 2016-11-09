@@ -21,7 +21,7 @@ public class IntroActivity extends AppCompatActivity {
         buttonContinue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent toy = new Intent(IntroActivity.this, GameActivity.class);
+                //Intent toy = new Intent(IntroActivity.this, GameActivity.class);
 
 
             }
