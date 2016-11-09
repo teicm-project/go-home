@@ -21,18 +21,6 @@
         android:fontFamily="sans-serif-condensed"
         style="@style/Widget.AppCompat.Button.Colored" />
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:ems="10"
-        android:id="@+id/textPassword"
-        android:layout_below="@+id/textUsername"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:hint="@string/text_password"
-        android:fontFamily="sans-serif-condensed" />
-
     <Button
         android:text="@string/button_register"
         android:layout_width="120dp"
@@ -54,6 +42,18 @@
         android:hint="@string/text_username"
         android:fontFamily="sans-serif-condensed"
         android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/textPassword"
+        android:hint="@string/text_password"
+        android:fontFamily="sans-serif-condensed"
+        android:layout_below="@+id/textUsername"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 </RelativeLayout>

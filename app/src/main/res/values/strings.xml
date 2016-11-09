@@ -8,4 +8,8 @@
     <string name="button_register">Εγγραφη</string>
     <string name="text_username">Username</string>
     <string name="text_password">Password</string>
+    <string name="button_register2">Εγγραφη</string>
+    <string name="button_login2">Συνδεση</string>
+    <string name="text_username2">Username</string>
+    <string name="text_password2">Password</string>
 </resources>
