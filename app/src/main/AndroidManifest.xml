@@ -18,6 +18,7 @@
         <activity android:name=".AboutActivity"></activity>
         <activity android:name=".IntroActivity"></activity>
         <activity android:name=".LoginActivity"></activity>
+        <activity android:name=".RegisterActivity"></activity>
     </application>
 
 </manifest>

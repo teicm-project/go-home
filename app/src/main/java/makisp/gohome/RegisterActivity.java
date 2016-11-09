@@ -1,6 +1,5 @@
 package makisp.gohome;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,7 +10,7 @@ import android.widget.Toast;
 
 import static makisp.gohome.R.id.TextUserName;
 
-public class Register_Activity extends AppCompatActivity {
+public class RegisterActivity extends AppCompatActivity {
     EditText editUserName,editPassword;
     Button btnAddData,btnAddData2;
     DbCredentials myDb = new DbCredentials(this);
@@ -47,7 +46,7 @@ public class Register_Activity extends AppCompatActivity {
                  String Username_String =   myDb.SearchUsername(usernamestrr);
                  if(Username_String.equals(usernamestrr))
                  {
-                     Toast temp = Toast.makeText(Register_Activity.this,"ο Username Υπάρχει είδη",Toast.LENGTH_LONG);
+                     Toast temp = Toast.makeText(RegisterActivity.this,"Ο χρήστης υπάρχει ήδη!",Toast.LENGTH_LONG);
                      temp.show();
 
                      editUserName.setText("");
@@ -61,7 +60,7 @@ public class Register_Activity extends AppCompatActivity {
                      credential.setUsername(usernamestrr);
                      credential.setPassword(passwordstrr);
 
-                     Toast temp = Toast.makeText(Register_Activity.this,"Επιτυχείς εγράφη",Toast.LENGTH_LONG);
+                     Toast temp = Toast.makeText(RegisterActivity.this,"Επιτυχείς εγγραφή!",Toast.LENGTH_LONG);
                      temp.show();
 
                    //  Βήμα 4
@@ -79,7 +78,7 @@ public class Register_Activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(Register_Activity.this,LoginActivity.class);
+                Intent intent = new Intent(RegisterActivity.this,LoginActivity.class);
                 startActivity(intent);
 
             }
