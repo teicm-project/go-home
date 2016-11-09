@@ -1,9 +1,12 @@
 package makisp.gohome;
+
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.widget.Button;
+import android.widget.EditText;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,6 +24,7 @@ public class DbCredentials extends SQLiteOpenHelper {
     private static final String KEY_PASSWORD = "Password";
 
 
+
     public DbCredentials(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
@@ -28,10 +32,11 @@ public class DbCredentials extends SQLiteOpenHelper {
     ///// Δημιουργία πίνακα /////
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String CREATE_CREDENTIAL_TABLE = "CREATE TABLE " + TABLE_CREDENTIALS + "("
+        String CREATE_CRIDENTIAL_TABLE = "CREATE TABLE " + TABLE_CREDENTIALS + "("
                 + KEY_ID + " INTEGER PRIMARY KEY," + KEY_USERNAME + " TEXT,"
                 + KEY_PASSWORD + " TEXT" + ")";
-        db.execSQL(CREATE_CREDENTIAL_TABLE);
+        db.execSQL(CREATE_CRIDENTIAL_TABLE);
+
     }
 
     ///// Αναβάθμιση βάσης /////
@@ -62,6 +67,7 @@ public class DbCredentials extends SQLiteOpenHelper {
         db.insert(TABLE_CREDENTIALS, null, values);
         db.close();
     }
+
 
     ///// Επιστροφή ενός συγκεκριμένου χρήστη /////
     public Credential getCredential(int id){
@@ -134,4 +140,30 @@ public class DbCredentials extends SQLiteOpenHelper {
                 new String[] { String.valueOf(credential.getId()) });
         db.close();
     }
+    // Created by kevintso 20  11-4-2016
+    public String SearchUsername(String username)
+    {
+        SQLiteDatabase db = this.getReadableDatabase();
+        String  query = "select Username from " +TABLE_CREDENTIALS;
+
+
+        Cursor cursor = db.rawQuery(query,null);
+        String a,b;
+        b = "not found;";
+        if(cursor.moveToFirst())
+        {
+            do {
+                    a = cursor.getString(0);
+
+                    if(a.equals(username))
+                    {
+                        b = cursor.getString(0);
+                        break;
+                    }
+            }while(cursor.moveToNext());
+        }
+    return b;
+    }
+
+
 }
