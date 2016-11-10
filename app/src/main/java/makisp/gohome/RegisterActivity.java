@@ -15,6 +15,7 @@ public class RegisterActivity extends AppCompatActivity {
     Button btnAddData,btnAddData2;
     DbCredentials myDb = new DbCredentials(this);
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,58 +32,62 @@ public class RegisterActivity extends AppCompatActivity {
         Egrafh.setOnClickListener(new View.OnClickListener() {
 
 
-             @Override
-             public void onClick(View v) {
+         @Override
+          public void onClick(View v) {
+           ////// Βήμα 2 εισάγουμε τα στοιχεία σε μεταβλητές Στρινγ για να μπορούν να μπουν στον βάση////////
+
+            String usernamestrr = editUserName.getText().toString();
+            String passwordstrr = editPassword.getText().toString();
+
+            editUserName.setText("");
+            editPassword.setText("");
+
+            String Username_String =   myDb.SearchUsername(usernamestrr);
 
 
-                 ////// Βήμα 2 εισάγουμε τα στοιχεία σε μεταβλητές Στρινγ για να μπορούν να μπουν στον βάση////////
+            if (Username_String.equals(usernamestrr)) {
+            Toast temp3 = Toast.makeText(RegisterActivity.this, "Ο χρήστης υπάρχει ήδη!", Toast.LENGTH_LONG);
+            temp3.show();
 
-                 String usernamestrr = editUserName.getText().toString();
-                 String passwordstrr = editPassword.getText().toString();
+            editUserName.setText("");
+            editPassword.setText("");
 
-                 editUserName.setText("");
-                 editPassword.setText("");
+            } else if (usernamestrr.matches("") || passwordstrr.matches("")){
 
-                 String Username_String =   myDb.SearchUsername(usernamestrr);
-                 if(Username_String.equals(usernamestrr))
-                 {
-                     Toast temp = Toast.makeText(RegisterActivity.this,"Ο χρήστης υπάρχει ήδη!",Toast.LENGTH_LONG);
-                     temp.show();
+             Toast temp1 = Toast.makeText(RegisterActivity.this, "Κενό Username ή Password!", Toast.LENGTH_LONG);
+             temp1.show();
 
-                     editUserName.setText("");
-                     editPassword.setText("");
-
-                 }else
-                 {
+             }else {
 //       Βήμα 3 εισάγουμε τα στοιχεία στον πίνακα
 
-                     Credential credential = new Credential();
-                     credential.setUsername(usernamestrr);
-                     credential.setPassword(passwordstrr);
+             Credential credential = new Credential();
+             credential.setUsername(usernamestrr);
+             credential.setPassword(passwordstrr);
 
-                     Toast temp = Toast.makeText(RegisterActivity.this,"Επιτυχείς εγγραφή!",Toast.LENGTH_LONG);
-                     temp.show();
+             Toast temp3 = Toast.makeText(RegisterActivity.this, "Επιτυχείς εγγραφή!", Toast.LENGTH_LONG);
+             temp3.show();
 
-                   //  Βήμα 4
-                     myDb.addCredential(credential);
-                 }
-
-                 }
+              //  Βήμα 4
+               myDb.addCredential(credential);
             }
+
+
+         }
+        }
         );
         // button Που ανοίγει άλλο Activity
 
         Button RegisterToLogin = (Button)findViewById(R.id.buttonsyndesh);
         RegisterToLogin.setOnClickListener(new View.OnClickListener() {
 
-            @Override
-            public void onClick(View v) {
+                                               @Override
+                                               public void onClick(View v) {
 
-                Intent intent = new Intent(RegisterActivity.this,LoginActivity.class);
-                startActivity(intent);
+                                                   Intent intent = new Intent(RegisterActivity.this,LoginActivity.class);
+                                                   startActivity(intent);
 
-            }
-        }
+                                               }
+                                           }
         );
 
 
