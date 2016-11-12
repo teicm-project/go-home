@@ -57,7 +57,9 @@ public class RegisterActivity extends AppCompatActivity {
              Toast temp1 = Toast.makeText(RegisterActivity.this, "Κενό Username ή Password!", Toast.LENGTH_LONG);
              temp1.show();
 
-             }else {
+             }
+
+            else {
 //       Βήμα 3 εισάγουμε τα στοιχεία στον πίνακα
 
              Credential credential = new Credential();
