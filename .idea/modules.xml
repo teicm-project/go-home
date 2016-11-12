@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/gohome.iml" filepath="$PROJECT_DIR$/gohome.iml" />
+      <module fileurl="file://$PROJECT_DIR$/go-home-StamDach.iml" filepath="$PROJECT_DIR$/go-home-StamDach.iml" />
     </modules>
   </component>
 </project>

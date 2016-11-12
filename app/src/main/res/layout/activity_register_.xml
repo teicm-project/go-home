@@ -23,6 +23,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
+        android:digits="_qwertzuiopasdfghjklyxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM0123456789"
         android:fontFamily="sans-serif-condensed" />
 
     <Button
@@ -60,5 +61,6 @@
         android:fontFamily="sans-serif-condensed"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
+        android:digits="_qwertzuiopasdfghjklyxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM0123456789!"
         android:layout_alignParentStart="true" />
 </RelativeLayout>

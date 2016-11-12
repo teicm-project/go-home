@@ -10,20 +10,19 @@ import android.widget.Button;
 /*** Created by Stamatis Dachretzis.*/
 
 public class IntroActivity extends AppCompatActivity {
-
+    public Button buttonContinue;
 
 
     ///// Event Handler για άνοιγμα του GameActivity /////
-    public Button buttonContinue;
+
 
     public void init() {
+
         buttonContinue = (Button) findViewById(R.id.buttonContinue);
         buttonContinue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Intent toy = new Intent(IntroActivity.this, GameActivity.class);
-
-
+                startActivity(new Intent(IntroActivity.this, GameActivity.class));
             }
         });
     }

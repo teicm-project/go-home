@@ -12,4 +12,7 @@
     <string name="button_login2">Συνδεση</string>
     <string name="text_username2">Username</string>
     <string name="text_password2">Password</string>
+    <string name="title_activity_game">Map</string>
+    <string name="buttonItems">Αντικειμενα</string>
+    <string name="buttonProfile">Προφιλ</string>
 </resources>
