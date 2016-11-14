@@ -6,7 +6,7 @@ package makisp.gohome;
 
 public class Invetory {
     private int id;
-    private String activeuser;
+    private String activeUser;
     private String item;
 
     ///// Άδειος κατασκευάστης /////
@@ -15,15 +15,15 @@ public class Invetory {
     }
 
     ///// Κατασκευάστης /////
-    public Invetory(int id, String username, String item){
+    public Invetory(int id, String activeUser, String item){
         this.id = id;
-        this.activeuser = activeuser;
+        this.activeUser = activeUser;
         this.item = item;
     }
 
     ///// Κατασκευάστης /////
-    public Invetory(String activeuser, String item){
-        this.activeuser = activeuser;
+    public Invetory(String activeUser, String item){
+        this.activeUser = activeUser;
         this.item = item;
     }
 
@@ -31,11 +31,11 @@ public class Invetory {
         this.id = id;
     }
 
-    public void setUsername(String activeuser){
-        this.activeuser = activeuser;
+    public void setActiveUser(String activeUser){
+        this.activeUser = activeUser;
     }
 
-    public void setPassword(String item){
+    public void setItem(String item){
         this.item = item;
     }
 
@@ -43,11 +43,11 @@ public class Invetory {
         return id;
     }
 
-    public String getActiveuser(){
-        return activeuser;
+    public String getActiveUser(){
+        return activeUser;
     }
 
-    public String getPassword(){
+    public String getItem(){
         return item;
     }
 }

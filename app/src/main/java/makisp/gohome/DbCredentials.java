@@ -5,10 +5,6 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.widget.Button;
-import android.widget.EditText;
-
-import com.google.android.gms.maps.model.Marker;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,6 +21,7 @@ public class DbCredentials extends SQLiteOpenHelper {
     private static final String KEY_ID = "ID";
     private static final String KEY_USERNAME = "Username";
     private static final String KEY_PASSWORD = "Password";
+    private static final String KEY_PROGRESS = "Progress";
 
      // column for Table Markers
 
@@ -45,22 +42,20 @@ public class DbCredentials extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         String CREATE_CRIDENTIAL_TABLE = "CREATE TABLE " + TABLE_CREDENTIALS + "("
-                + KEY_ID + " INTEGER PRIMARY KEY," + KEY_USERNAME + " TEXT,"
-                + KEY_PASSWORD + " TEXT" + ")";
+                + KEY_ID + " INTEGER PRIMARY KEY,"
+                + KEY_USERNAME + " TEXT,"
+                + KEY_PASSWORD + " TEXT,"
+                + KEY_PROGRESS + " TEXT"
+                + ")";
         db.execSQL(CREATE_CRIDENTIAL_TABLE);
 
-
-          String  CREATE_TABLE_MARKERS = "CREATE TABLE " + TABLE_MARKERS + "("
+        String  CREATE_TABLE_MARKERS = "CREATE TABLE " + TABLE_MARKERS + "("
                 + ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
                 + KEY_X + " DOUBLE ,"
                 + KEY_Y + " DOUBLE "
                 + ")";
         db.execSQL(CREATE_TABLE_MARKERS);
-
-
     }
-
-
 
     ///// Αναβάθμιση βάσης /////
     @Override
@@ -86,6 +81,8 @@ public class DbCredentials extends SQLiteOpenHelper {
         values.put(KEY_USERNAME, credential.getUsername());
         ///// Ο κωδικός του χρήστη /////
         values.put(KEY_PASSWORD, credential.getPassword());
+        ///// Ο κωδικός του χρήστη /////
+        values.put(KEY_PROGRESS, credential.getProgress());
 
         ///// Εισαγωγή γραμμής /////
         db.insert(TABLE_CREDENTIALS, null, values);
@@ -108,10 +105,12 @@ public class DbCredentials extends SQLiteOpenHelper {
 
         values.put(KEY_Y, markers.getLongitude());
 
-        ///// Εισαγωγή γραμμής /////
-
-        db.insert(TABLE_MARKERS, null, values);
-        db.close();
+        ///// Εισαγωγή γραμμής  /////
+        ///// Αν δεν υπάρχει στον πίνακα /////
+        if(isMarkerExists(db, markers.getId()) == false) {
+            db.insert(TABLE_MARKERS, null, values);
+            db.close();
+        }
     }
 
 
@@ -119,14 +118,20 @@ public class DbCredentials extends SQLiteOpenHelper {
     public Credential getCredential(int id){
         SQLiteDatabase db = this.getReadableDatabase();
 
-        Cursor cursor = db.query(TABLE_CREDENTIALS, new String[]{KEY_ID,
-        KEY_USERNAME, KEY_PASSWORD}, KEY_ID + "=?",
+        Cursor cursor = db.query(TABLE_CREDENTIALS, new String[]{
+                        KEY_ID,
+                        KEY_USERNAME,
+                        KEY_PASSWORD,
+                        KEY_PROGRESS}, KEY_ID + "=?",
                 new String[]{String.valueOf(id)}, null, null, null, null);
         if(cursor != null)
             cursor.moveToFirst();
 
-        Credential credential = new Credential(Integer.parseInt(cursor.getString(0)),
-                cursor.getString(1), cursor.getString(2));
+        Credential credential = new Credential(
+                cursor.getInt(0),
+                cursor.getString(1),
+                cursor.getString(2),
+                cursor.getInt(3));
         return credential;
     }
 
@@ -160,9 +165,10 @@ public class DbCredentials extends SQLiteOpenHelper {
         if (cursor.moveToFirst()) {
             do {
                 Credential credential = new Credential();
-                credential.setId(Integer.parseInt(cursor.getString(0)));
+                credential.setId(cursor.getInt(0));
                 credential.setUsername(cursor.getString(1));
                 credential.setPassword(cursor.getString(2));
+                credential.setProgress(cursor.getInt(3));
                 ///// Εισχώρηση χρηστών στην λίστα /////
                 credentialList.add(credential);
             } while (cursor.moveToNext());
@@ -242,7 +248,7 @@ public class DbCredentials extends SQLiteOpenHelper {
 
 
     ///// Ενημέρωση ενός χρήστη /////
-    public int updateCredential(Credential credential) {
+    public int updateCredential(Credential credential, String paok) {
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
@@ -252,6 +258,18 @@ public class DbCredentials extends SQLiteOpenHelper {
         ///// Ενημέρωση γραμμής /////
         return db.update(TABLE_CREDENTIALS, values, KEY_ID + " = ?",
                 new String[] { String.valueOf(credential.getId()) });
+    }
+
+    ///// Ενημέρωση τη πρόοδος του χρήστη /////
+    public int updateProgress(Credential credential, String activeUser, int i) {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(KEY_PROGRESS, i);
+
+        ///// Ενημέρωση γραμμής /////
+        return db.update(TABLE_CREDENTIALS, values, KEY_USERNAME + " = ?",
+                new String[]{ activeUser });
     }
 
 
@@ -319,6 +337,17 @@ public class DbCredentials extends SQLiteOpenHelper {
             }while(cursor.moveToNext());
         }
     return b;
+    }
+
+    ///// Έλεγχος αν το σημάδι υπάρχει επιστρέφη αληθές ή ψευδές /////
+    public boolean isMarkerExists(SQLiteDatabase db, int id) {
+
+        ///// SQL ερώτημα αν το σημάδι υπάρχει μέσα στον πίνακα /////
+        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_MARKERS
+                + " WHERE " + ID + " = " + id , null);
+        ///// Αν ο δείκτης είναι μεγάλυτερος το 0 σημαίνει οτι υπάρχει /////
+        boolean exists = (cursor.getCount() > 0);
+        return exists;
     }
 
 

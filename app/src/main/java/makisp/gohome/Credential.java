@@ -8,6 +8,7 @@ public class Credential {
     private int id;
     private String username;
     private String password;
+    private int progress;
 
     ///// Άδειος κατασκευάστης /////
     public Credential(){
@@ -15,16 +16,18 @@ public class Credential {
     }
 
     ///// Κατασκευάστης /////
-    public Credential(int id, String username, String password){
+    public Credential(int id, String username, String password, int progress){
         this.id = id;
         this.username = username;
         this.password = password;
+        this.progress = progress;
     }
 
     ///// Κατασκευάστης /////
-    public Credential(String username, String password){
+    public Credential(String username, String password, int progress){
         this.username = username;
         this.password = password;
+        this.progress = progress;
     }
 
     public void setId(int id){
@@ -39,6 +42,10 @@ public class Credential {
         this.password = password;
     }
 
+    public void setProgress(int progress){
+        this.progress= progress;
+    }
+
     public int getId(){
         return id;
     }
@@ -49,5 +56,9 @@ public class Credential {
 
     public String getPassword(){
         return password;
+    }
+
+    public int getProgress(){
+        return progress;
     }
 }

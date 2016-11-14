@@ -29,8 +29,10 @@ public class DbInventory extends SQLiteOpenHelper{
         ///// Δημιουργία του πίνακα /////
         @Override
         public void onCreate(SQLiteDatabase db) {
-            String CREATE_CREDENTIAL_TABLE = "CREATE TABLE " + TABLE_USERITEM + "("
-                    + KEY_ID + " INTEGER PRIMARY KEY," + KEY_ACTIVEUSER + " TEXT,"
+            String CREATE_CREDENTIAL_TABLE = "CREATE TABLE "
+                    + TABLE_USERITEM + "("
+                    + KEY_ID + " INTEGER PRIMARY KEY,"
+                    + KEY_ACTIVEUSER + " TEXT,"
                     + KEY_ITEM + " TEXT" + ")";
             db.execSQL(CREATE_CREDENTIAL_TABLE);
         }
@@ -59,23 +61,26 @@ public class DbInventory extends SQLiteOpenHelper{
             db.close();
         }
 
-        public Credential getItem(int id){
+        public Invetory getItem(int id){
         SQLiteDatabase db = this.getReadableDatabase();
 
-        Cursor cursor = db.query(TABLE_USERITEM, new String[]{KEY_ID,
-                        KEY_ACTIVEUSER, KEY_ITEM}, KEY_ID + "=?",
+        Cursor cursor = db.query(TABLE_USERITEM, new String[]{
+                KEY_ID,
+                KEY_ACTIVEUSER,
+                KEY_ITEM}, KEY_ID + "=?",
                 new String[]{String.valueOf(id)}, null, null, null, null);
         if(cursor != null)
             cursor.moveToFirst();
 
-        Credential credential = new Credential(Integer.parseInt(cursor.getString(0)),
-                cursor.getString(1), cursor.getString(2));
-        return credential;
+        Invetory invetory = new Invetory(Integer.parseInt(cursor.getString(0)),
+                cursor.getString(1),
+                cursor.getString(2));
+        return invetory;
         }
 
         ///// Επιστροφή όλων των item /////
-        public List<Credential> getAllCredentials() {
-            List<Credential> credentialList = new ArrayList<Credential>();
+        public List<Invetory> getAllItems() {
+            List<Invetory> itemsList = new ArrayList<Invetory>();
          ///// Επιλογή όλων/////
         String selectQuery = "SELECT  * FROM " + TABLE_USERITEM;
 
@@ -85,21 +90,21 @@ public class DbInventory extends SQLiteOpenHelper{
         ///// Επανάληψη σε όλες τις γραμμές και εισχωρηση items στην λίστα /////
         if (cursor.moveToFirst()) {
             do {
-                Credential credential = new Credential();
-                credential.setId(Integer.parseInt(cursor.getString(0)));
-                credential.setUsername(cursor.getString(1));
-                credential.setPassword(cursor.getString(2));
+                Invetory inventory = new Invetory();
+                inventory.setId(Integer.parseInt(cursor.getString(0)));
+                inventory.setActiveUser(cursor.getString(1));
+                inventory.setItem(cursor.getString(2));
                 ///// Εισχώρηση χρηστών στην λίστα /////
-                credentialList.add(credential);
+                itemsList.add(inventory);
             } while (cursor.moveToNext());
         }
 
         ///// Επιστροφή της λίστας των item /////
-        return credentialList;
+        return itemsList;
         }
 
         ///// Επιστρέφει το πλήθος των item απο τους χρήστες /////
-        public int getContactsCount() {
+        public int getItemsCount() {
             String countQuery = "SELECT  * FROM " + TABLE_USERITEM;
             SQLiteDatabase db = this.getReadableDatabase();
             Cursor cursor = db.rawQuery(countQuery, null);
@@ -110,23 +115,23 @@ public class DbInventory extends SQLiteOpenHelper{
         }
 
         ///// Ενημέρωση ενός item ενος χρήστη /////
-        public int updateCredential(Credential credential) {
+        public int updateItem(Invetory invetory) {
             SQLiteDatabase db = this.getWritableDatabase();
 
             ContentValues values = new ContentValues();
-            values.put(KEY_ACTIVEUSER, credential.getUsername());
-            values.put(KEY_ITEM, credential.getPassword());
+            values.put(KEY_ACTIVEUSER, invetory.getActiveUser());
+            values.put(KEY_ITEM, invetory.getItem());
 
             ///// Ενημέρωση γραμμής /////
             return db.update(TABLE_USERITEM, values, KEY_ID + " = ?",
-                    new String[] { String.valueOf(credential.getId()) });
+                    new String[] { String.valueOf(invetory.getId()) });
         }
 
         ///// Διαγραφή ενός item απο εναν χρήστη /////
-        public void deleteCredential(Credential credential) {
+        public void deleteItem(Invetory invetory) {
             SQLiteDatabase db = this.getWritableDatabase();
             db.delete(TABLE_USERITEM, KEY_ID + " = ?",
-                    new String[] { String.valueOf(credential.getId()) });
+                    new String[] { String.valueOf(invetory.getId()) });
             db.close();
         }
     }
