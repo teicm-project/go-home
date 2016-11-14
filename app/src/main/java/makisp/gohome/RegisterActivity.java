@@ -65,6 +65,7 @@ public class RegisterActivity extends AppCompatActivity {
              Credential credential = new Credential();
              credential.setUsername(usernamestrr);
              credential.setPassword(passwordstrr);
+                credential.setProgress(1);
 
              Toast temp3 = Toast.makeText(RegisterActivity.this, "Επιτυχείς εγγραφή!", Toast.LENGTH_LONG);
              temp3.show();
