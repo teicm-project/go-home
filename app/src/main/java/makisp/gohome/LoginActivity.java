@@ -5,13 +5,17 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.List;
+
 public class LoginActivity extends AppCompatActivity {
     public DbCredentials dbCredentials = new DbCredentials(this);
+    public static int activeUser = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,7 +62,18 @@ public class LoginActivity extends AppCompatActivity {
        }
        else{
            Toast.makeText(LoginActivity.this, "Καλωσήρθες " + username + "!", Toast.LENGTH_SHORT).show();
-           startActivity(new Intent(LoginActivity.this,IntroActivity.class));
+           List<Credential> credentials = MainActivity.db.getAllCredentials();
+           for(Credential credential : credentials){
+               if(credential.getUsername().equals(username)) {
+                   activeUser = credential.getId();
+               }
+           }
+           if(MainActivity.db.getCredential(activeUser).getProgress() == 1) {
+               startActivity(new Intent(LoginActivity.this, IntroActivity.class));
+           }
+           else {
+               startActivity(new Intent(LoginActivity.this, GameActivity.class));
+           }
            cursor.close();
        }
    }
