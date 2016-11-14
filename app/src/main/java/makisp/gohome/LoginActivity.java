@@ -16,6 +16,7 @@ import java.util.List;
 public class LoginActivity extends AppCompatActivity {
     public DbCredentials dbCredentials = new DbCredentials(this);
     public static int activeUser = 0;
+    public static String onlineUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +63,7 @@ public class LoginActivity extends AppCompatActivity {
        }
        else{
            Toast.makeText(LoginActivity.this, "Καλωσήρθες " + username + "!", Toast.LENGTH_SHORT).show();
+           onlineUser = username;
            List<Credential> credentials = MainActivity.db.getAllCredentials();
            for(Credential credential : credentials){
                if(credential.getUsername().equals(username)) {
