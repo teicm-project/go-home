@@ -15,4 +15,8 @@
     <string name="title_activity_game">Map</string>
     <string name="buttonItems">Αντικειμενα</string>
     <string name="buttonProfile">Προφιλ</string>
+    <string name="scenario_title">Scenario 1</string>
+    <string name="scenario_story">Ήρθε η ώρα της πρώτης σου απόφασης</string>
+    <string name="button_choice1">1Η ΕΠΙΛΟΓΗ</string>
+    <string name="button_choice2">2Η ΕΠΙΛΟΓΗ</string>
 </resources>
