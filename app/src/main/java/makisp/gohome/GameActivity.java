@@ -33,7 +33,7 @@ public class GameActivity extends FragmentActivity implements OnMapReadyCallback
     private HashMap<Integer, Marker> visibleMarkers = new HashMap<>();
     public static int progress;
     private List<Markers> markers;
-    private Credential cre;
+    public static Credential cre;
 
 
     ///// Event Handler για άνοιγμα του Inventory /////
@@ -46,9 +46,6 @@ public class GameActivity extends FragmentActivity implements OnMapReadyCallback
             @Override
             public void onClick(View v) {
                startActivity(new Intent(GameActivity.this, MainActivity.class));
-                progress++;
-                MainActivity.db.updateProgress(cre, cre.getUsername(), progress);
-                Log.d("Credentail:", "Paok " + "Progress:" + cre.getProgress());
             }
         });
     }
@@ -101,7 +98,7 @@ public class GameActivity extends FragmentActivity implements OnMapReadyCallback
             @Override
             public boolean onMarkerClick(Marker marker) {
                 if (marker.isVisible()) {
-                    Intent intent = new Intent(GameActivity.this, MainActivity.class);
+                    Intent intent = new Intent(GameActivity.this, ScenarioActivity.class);
                     startActivity(intent);
                 }
                 return false;
