@@ -22,15 +22,14 @@ android:layout_height="match_parent" >
     android:layout_alignParentLeft="true"
     android:layout_alignParentStart="true" />
 
-<Button
-    android:id="@+id/buttonItems"
-    android:layout_height="wrap_content"
-    android:minWidth="160sp"
-    android:text="@string/buttonItems"
-    android:layout_marginTop="12dp"
-    android:layout_alignParentTop="true"
-    android:layout_alignParentRight="true"
-    android:layout_alignParentEnd="true"
-    android:layout_width="117dp" />
+    <Button
+        android:id="@+id/buttonItems"
+        android:layout_height="wrap_content"
+        android:minWidth="160sp"
+        android:text="@string/buttonItems"
+        android:layout_width="117dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>
