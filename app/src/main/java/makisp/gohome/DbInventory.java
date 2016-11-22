@@ -47,14 +47,14 @@ public class DbInventory extends SQLiteOpenHelper{
             onCreate(db);
         }
 
-        public void addItem(Credential credential) {
+        public void addItem(Invetory credential) {
             SQLiteDatabase db = this.getWritableDatabase();
 
             ContentValues values = new ContentValues();
             ///// Το όνομα του χρήστη /////
-            values.put(KEY_ACTIVEUSER, credential.getUsername());
+            values.put(KEY_ACTIVEUSER, credential.getActiveUser());
             ///// το item του χρηστη /////
-            values.put(KEY_ITEM, credential.getPassword());
+            values.put(KEY_ITEM, credential.getItem());
 
             ///// Εισαγωγή γραμμής /////
             db.insert(TABLE_USERITEM, null, values);
