@@ -34,6 +34,8 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+
+import java.text.DecimalFormat;
 import java.util.HashMap;
 import java.util.List;
 import java.util.logging.Handler;
@@ -145,8 +147,15 @@ public class GameActivity extends FragmentActivity implements OnMapReadyCallback
             @Override
             public boolean onMarkerClick(Marker marker) {
                 if (marker.isVisible()) {
-                    Intent intent = new Intent(GameActivity.this, ScenarioActivity.class);
-                    startActivity(intent);
+                    boolean checkDistance = markerDistance();
+                    if(checkDistance){
+                        Intent intent = new Intent(GameActivity.this, ScenarioActivity.class);
+                        startActivity(intent);
+                    }
+                    else{
+                        Toast.makeText(getApplicationContext() , "Πλησίασε πιο κοντά στο σημείο!", Toast.LENGTH_LONG).show();
+                    }
+
                 }
                 return false;
             }
@@ -266,7 +275,6 @@ public class GameActivity extends FragmentActivity implements OnMapReadyCallback
                     }
 
                 } else {
-
                     // To permission δεν δώθηκε
                     Toast.makeText(this, "Δεν δώθηκαν δικαιώματα!", Toast.LENGTH_LONG).show();
                 }
@@ -337,5 +345,49 @@ public class GameActivity extends FragmentActivity implements OnMapReadyCallback
             }
         });
         thread.start();
+    }
+
+    //Μέθοδος υπολογισμού της απόστασης του χρήστη από το marker
+    public boolean markerDistance() {
+        int Radius = 6371;
+        LatLng userLatLng = getUserLocation(mLastLocation);
+        LatLng markerLatLng = getMarkerLocation();
+
+        double lat1 = userLatLng.latitude;
+        double lat2 = markerLatLng.latitude;
+        double lon1 = userLatLng.longitude;
+        double lon2 = markerLatLng.longitude;
+        double dLat = Math.toRadians(lat2 - lat1);
+        double dLon = Math.toRadians(lon2 - lon1);
+        double a = Math.sin(dLat / 2) * Math.sin(dLat / 2)
+                + Math.cos(Math.toRadians(lat1))
+                * Math.cos(Math.toRadians(lat2)) * Math.sin(dLon / 2)
+                * Math.sin(dLon / 2);
+        double c = 2 * Math.asin(Math.sqrt(a));
+        double finalDistance = Radius * c * 1000;
+
+        if(finalDistance <= 50.0){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    //Μέθοδος για συντεταγμένες του χρήστη
+    public LatLng getUserLocation(Location location){
+        final LatLng userLatLng = new LatLng(location.getLatitude(), location.getLongitude());
+        return userLatLng;
+    }
+
+    //Μέθοδος για συντεταγμένες του ενεργού marker
+    private LatLng getMarkerLocation(){
+        LatLng markerLatLng = null;
+        for(Markers marker : markers) {
+            if(marker.getId() == progress) {
+                markerLatLng = new LatLng(marker.getLatitude(), marker.getLongitude());
+            }
+        }
+        return markerLatLng;
     }
 }
