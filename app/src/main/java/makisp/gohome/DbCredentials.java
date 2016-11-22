@@ -137,7 +137,6 @@ public class DbCredentials extends SQLiteOpenHelper {
 
 
     ///// Επιστροφή ενός συγκεκριμένου Marker /////
-
     public Markers getMarkers(int id){
         SQLiteDatabase db = this.getReadableDatabase();
 
