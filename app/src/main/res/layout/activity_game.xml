@@ -89,12 +89,4 @@ android:layout_height="match_parent"
         android:progressTint="@android:color/holo_green_dark"
         android:layout_marginTop="2dp"/>
 
-    <TextView
-        android:text="TextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/buttonProfile"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/textTest" />
-
 </RelativeLayout>
