@@ -18,6 +18,8 @@ import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -34,6 +36,9 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import java.util.HashMap;
 import java.util.List;
+import java.util.logging.Handler;
+
+import static makisp.gohome.LoginActivity.onlineUser;
 
 public class GameActivity extends FragmentActivity implements OnMapReadyCallback,
         GoogleApiClient.ConnectionCallbacks,
@@ -56,27 +61,25 @@ public class GameActivity extends FragmentActivity implements OnMapReadyCallback
     public static Credential cre;
 
     ///// Event Handler για άνοιγμα του Inventory /////
-
     public void PressItemButton() {
 
         buttonItems = (Button) findViewById(R.id.buttonItems);
         buttonItems.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               startActivity(new Intent(GameActivity.this, MainActivity.class));
+               startActivity(new Intent(GameActivity.this, ItemsActivity.class));
             }
         });
     }
 
     ///// Event Handler για άνοιγμα του ProfileActivity /////
-
     public void PressProfileButton() {
 
         buttonProfile = (Button) findViewById(R.id.buttonProfile);
         buttonProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-              startActivity(new Intent(GameActivity.this, MainActivity.class));
+              startActivity(new Intent(GameActivity.this, ProfileActivity.class));
             }
         });
     }
@@ -87,6 +90,10 @@ public class GameActivity extends FragmentActivity implements OnMapReadyCallback
         setContentView(R.layout.activity_game);
         PressItemButton();
         PressProfileButton();
+
+        //Αλλάζει την μεταβλητή του Username ανάλογα με τον συνδεδεμένο χρήστη
+        TextView t = (TextView) findViewById(R.id.textUsername);
+        t.setText(onlineUser);
 
         ///// Ελέγχει την έκδοση του Android και αν είναι Android M ζήτάει permission για να /////
         ///// χρησιμοποιήσει το gps /////
@@ -148,6 +155,8 @@ public class GameActivity extends FragmentActivity implements OnMapReadyCallback
         cre = MainActivity.db.getCredential(LoginActivity.activeUser);
         progress = cre.getProgress();
         addMarkersToMap(markers);
+
+        fillProgressBar();
     }
 
     ///// Όταν κάνει επαναφορά στον χάρτη εμφανίζει το σώστο σημάδι /////
@@ -158,6 +167,7 @@ public class GameActivity extends FragmentActivity implements OnMapReadyCallback
             visibleMarkers.get(progress - 1).setVisible(false);
             visibleMarkers.get(progress).setVisible(true);
         }
+        fillProgressBar();
         Log.i("LogMessage", "onResume");
     }
 
@@ -315,5 +325,17 @@ public class GameActivity extends FragmentActivity implements OnMapReadyCallback
         }else{
             Toast.makeText(this, "Οι υπηρεσίες τοποθεσίας έχουν ανασταλεί. Παρακαλώ ξανά συνδεθείτε" + connectionResult.getErrorCode(), Toast.LENGTH_LONG).show();
         }
+    }
+
+    //Συνάρτηση για γέμισμα του ProgressBar ανάλογα με την πρόοδο του χρήστη
+    public void fillProgressBar(){
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                ProgressBar p = (ProgressBar) findViewById(R.id.barHorizontal);
+                p.setProgress(progress - 1);
+            }
+        });
+        thread.start();
     }
 }
