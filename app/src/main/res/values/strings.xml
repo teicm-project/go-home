@@ -19,4 +19,6 @@
     <string name="scenario_story">Ήρθε η ώρα της πρώτης σου απόφασης</string>
     <string name="button_choice1">1Η ΕΠΙΛΟΓΗ</string>
     <string name="button_choice2">2Η ΕΠΙΛΟΓΗ</string>
+    <string name="text_username3">Ονομα:</string>
+    <string name ="text_progress">Προοδος:</string>
 </resources>
