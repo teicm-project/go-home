@@ -14,54 +14,16 @@ android:layout_height="match_parent"
     class="com.google.android.gms.maps.SupportMapFragment" />
 
     <Button
-        android:id="@+id/buttonItems"
-        android:layout_height="50dp"
-        android:minWidth="160sp"
-        android:text="@string/buttonItems"
-        android:layout_width="120dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:fontFamily="sans-serif-condensed" />
-
-    <Button
         android:id="@+id/buttonProfile"
         android:layout_height="50dp"
         android:minWidth="160sp"
-        android:text="@string/buttonProfile"
-        android:layout_width="120dp"
+        android:layout_width="50dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         style="@style/Widget.AppCompat.Button.Colored"
-        android:fontFamily="sans-serif-condensed" />
-
-    <TextView
-        android:text="@string/text_username3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/buttonProfile"
-        android:layout_toEndOf="@+id/buttonProfile"
-        android:id="@+id/textView12"
         android:fontFamily="sans-serif-condensed"
-        android:layout_marginTop="4dp"
-        android:textStyle="normal|bold"
-        android:textAllCaps="true" />
-
-    <TextView
-        android:text="@string/text_progress"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView12"
-        android:layout_toRightOf="@+id/buttonProfile"
-        android:layout_toEndOf="@+id/buttonProfile"
-        android:id="@+id/textView13"
-        android:fontFamily="sans-serif-condensed"
-        android:layout_marginTop="4dp"
-        android:textStyle="normal|bold"
-        android:textAllCaps="true" />
+        android:background="@drawable/ic_account_box_outline_white_48dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -72,21 +34,61 @@ android:layout_height="match_parent"
         android:id="@+id/textUsername"
         android:layout_marginLeft="5dp"
         android:textColor="@android:color/holo_green_dark"
-        android:textStyle="normal|italic" />
+        android:textStyle="normal|italic"
+        android:fontFamily="sans-serif-condensed" />
+
+    <Button
+        android:id="@+id/buttonItems"
+        android:layout_height="50dp"
+        android:minWidth="160sp"
+        android:layout_width="50dp"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:fontFamily="sans-serif-condensed"
+        android:background="@drawable/ic_clipboard_white_48dp"
+        android:layout_alignBottom="@+id/buttonProfile"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:text="@string/text_username3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView12"
+        android:fontFamily="sans-serif-condensed"
+        android:textStyle="normal|bold"
+        android:textAllCaps="true"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/buttonProfile"
+        android:layout_toEndOf="@+id/buttonProfile"
+        android:layout_marginLeft="93dp"
+        android:layout_marginStart="93dp"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="5dp" />
+
+    <TextView
+        android:text="@string/text_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView13"
+        android:fontFamily="sans-serif-condensed"
+        android:textStyle="normal|bold"
+        android:textAllCaps="true"
+        android:layout_below="@+id/textView12"
+        android:layout_toLeftOf="@+id/textUsername"
+        android:layout_toStartOf="@+id/textUsername"
+        android:textColor="@android:color/white" />
 
     <ProgressBar
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="80dp"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/textView13"
-        android:layout_toRightOf="@+id/textView13"
-        android:layout_toEndOf="@+id/textView13"
         android:id="@+id/barHorizontal"
-        android:layout_marginLeft="5dp"
         android:indeterminate="false"
         android:max="10"
         android:progress="0"
         android:progressTint="@android:color/holo_green_dark"
-        android:layout_marginTop="2dp"/>
+        android:layout_alignBottom="@+id/textView13"
+        android:layout_alignLeft="@+id/textUsername"
+        android:layout_alignStart="@+id/textUsername" />
 
 </RelativeLayout>

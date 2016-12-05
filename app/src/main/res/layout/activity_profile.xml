@@ -8,40 +8,60 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="makisp.gohome.ProfileActivity">
+    tools:context="makisp.gohome.ProfileActivity"
+    android:background="@drawable/bg">
 
     <TextView
-        android:text="TextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginRight="72dp"
-        android:layout_marginEnd="72dp"
-        android:layout_marginTop="53dp"
         android:id="@+id/ProfileView"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Button" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Button"
+        android:fontFamily="sans-serif-condensed"
+        android:textAllCaps="false"
+        android:textStyle="normal|italic"
+        android:textColor="@android:color/holo_green_dark"
+        android:layout_alignBaseline="@+id/textView14"
+        android:layout_alignBottom="@+id/textView14"
+        android:layout_toRightOf="@+id/textView14"
+        android:layout_toEndOf="@+id/textView14"
+        android:layout_marginLeft="5dp" />
 
     <TextView
-        android:text="User Name"
+        android:text="@string/text_profile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
-        android:id="@+id/textView14"
-        android:layout_alignBaseline="@+id/ProfileView"
-        android:layout_alignBottom="@+id/ProfileView"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Button" />
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/textView"
+        android:fontFamily="sans-serif-condensed"
+        android:textSize="30sp"
+        android:textAllCaps="true"
+        android:textStyle="normal|bold"
+        android:textColor="@android:color/white" />
 
     <Button
-        android:text="ΑΠΟΣΥΝΔΕΣΗ"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:id="@+id/btnaposindesi"
-        style="@style/Widget.AppCompat.Button.Colored" />
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:fontFamily="sans-serif-condensed"
+        android:background="@drawable/ic_logout_variant_white_48dp"
+        android:layout_marginTop="23dp"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:text="@string/text_username4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView14"
+        android:textAppearance="@style/TextAppearance.AppCompat.Button"
+        android:fontFamily="sans-serif-condensed"
+        android:textStyle="normal|bold"
+        android:layout_alignBaseline="@+id/btnaposindesi"
+        android:layout_alignBottom="@+id/btnaposindesi"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
 </RelativeLayout>
