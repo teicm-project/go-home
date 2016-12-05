@@ -35,10 +35,10 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-import java.text.DecimalFormat;
+
 import java.util.HashMap;
 import java.util.List;
-import java.util.logging.Handler;
+
 
 import static makisp.gohome.LoginActivity.loggedIn;
 import static makisp.gohome.LoginActivity.onlineUser;
@@ -62,6 +62,7 @@ public class GameActivity extends FragmentActivity implements OnMapReadyCallback
     public static int progress;
     private List<Markers> markers;
     public static Credential cre;
+    public static int numberOfMarkers;
 
     ///// Event Handler για άνοιγμα του Inventory /////
     public void PressItemButton() {
@@ -164,9 +165,15 @@ public class GameActivity extends FragmentActivity implements OnMapReadyCallback
                 return false;
             }
         });
+        ///// Το πλήθος των σημαδίων στον πίνακα ////
+        numberOfMarkers = MainActivity.db.getMarkersCount();
+        ///// Παίρνει όλα τα σημάδια απο την βάση και τα βάζει στην λίστα /////
         markers = MainActivity.db.getAllMarkers();
+        ///// Παίρνει τα στοιχεία του χρήστη που είναι συνδεδεμένος /////
         cre = MainActivity.db.getCredential(LoginActivity.activeUser);
+        ///// Επιστρέφει την προόδο του χρήστη που είναι συνδεδεμένος /////
         progress = cre.getProgress();
+        ///// Καλεί την μέθοδο που τοποθετεί όλα τα σημάδια στον χάρτη /////
         addMarkersToMap(markers);
 
         fillProgressBar();
@@ -179,7 +186,7 @@ public class GameActivity extends FragmentActivity implements OnMapReadyCallback
             startActivity(new Intent(GameActivity.this, MainActivity.class));
         }
         super.onResume();
-        if((progress >= 2 && progress <= 5) && mMap != null) {
+        if((progress >= 2 && progress <= numberOfMarkers) && mMap != null) {
             visibleMarkers.get(progress - 1).setVisible(false);
             visibleMarkers.get(progress).setVisible(true);
         }
