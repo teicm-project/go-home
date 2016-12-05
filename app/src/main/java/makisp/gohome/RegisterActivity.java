@@ -42,7 +42,7 @@ public class RegisterActivity extends AppCompatActivity {
             editUserName.setText("");
             editPassword.setText("");
 
-            String Username_String =   myDb.SearchUsername(usernamestrr);
+            String Username_String = myDb.SearchUsername(usernamestrr);
 
 
             if (Username_String.equals(usernamestrr)) {
