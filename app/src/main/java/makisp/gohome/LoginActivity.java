@@ -15,8 +15,9 @@ import java.util.List;
 
 public class LoginActivity extends AppCompatActivity {
     public DbCredentials dbCredentials = new DbCredentials(this);
-    public static int activeUser = 0;
+    public static int activeUser = 1;
     public static String onlineUser;
+    public static boolean loggedIn = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,9 +72,11 @@ public class LoginActivity extends AppCompatActivity {
                }
            }
            if(MainActivity.db.getCredential(activeUser).getProgress() == 1) {
+               loggedIn = true;
                startActivity(new Intent(LoginActivity.this, IntroActivity.class));
            }
            else {
+               loggedIn = true;
                startActivity(new Intent(LoginActivity.this, GameActivity.class));
            }
            cursor.close();

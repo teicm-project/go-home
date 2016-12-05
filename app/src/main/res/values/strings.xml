@@ -5,11 +5,11 @@
     <string name="button_about">Σχετικα</string>
     <string name="button_continue">Συνεχεια</string>
     <string name="button_login">Συνδεση</string>
-    <string name="button_register">Εγγραφη</string>
+    <string name="button_register">Κανε Εγγραφη</string>
     <string name="text_username">Username</string>
     <string name="text_password">Password</string>
     <string name="button_register2">Εγγραφη</string>
-    <string name="button_login2">Συνδεση</string>
+    <string name="button_login2">Πισω στη Συνδεση</string>
     <string name="text_username2">Username</string>
     <string name="text_password2">Password</string>
     <string name="title_activity_game">Map</string>
@@ -61,4 +61,10 @@
     <string name="button_choice210">ΒΗ ΕΠΙΛΟΓΗ</string>
     <string name="text_username3">Ονομα:</string>
     <string name ="text_progress">Προοδος:</string>
+	<string name="text_username4">Ονομα:</string>
+    <string name="text_profile">Προφιλ</string>
+    <string name="text_item">Αντικειμενα</string>
+    <string name="text_about">Σχετικα</string>
+    <string name="text_login">Συνδεση</string>
+    <string name="text_register">Εγγραφη</string>
 </resources>

@@ -19,19 +19,9 @@
         android:id="@+id/buttonStart"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_below="@+id/textTitle"
-        android:layout_centerHorizontal="true" />
-
-    <Button
-        android:text="@string/button_about"
-        android:layout_width="120dp"
-        android:layout_height="50dp"
-        android:id="@+id/buttonAbout"
-        android:layout_below="@+id/buttonStart"
-        android:layout_alignLeft="@+id/buttonStart"
-        android:layout_alignStart="@+id/buttonStart"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_alignRight="@+id/buttonStart"
-        android:layout_alignEnd="@+id/buttonStart" />
+        android:layout_centerHorizontal="true"
+        android:fontFamily="sans-serif-condensed"
+        android:textStyle="normal|bold" />
 
     <TextView
         android:text="@string/text_gohome"
@@ -45,4 +35,16 @@
         android:textSize="30sp"
         android:textStyle="normal|bold"
         android:fontFamily="sans-serif-condensed" />
+
+    <Button
+        android:text="@string/button_about"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:id="@+id/buttonAbout"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:fontFamily="sans-serif-condensed"
+        android:layout_below="@+id/buttonStart"
+        android:layout_alignLeft="@+id/buttonStart"
+        android:layout_alignStart="@+id/buttonStart"
+        android:textStyle="normal|bold" />
 </RelativeLayout>

@@ -21,6 +21,7 @@
         style="@style/Widget.AppCompat.Button.Colored"
         android:textColorLink="@android:color/black"
         android:textColorHint="@android:color/background_light"
-        android:fontFamily="sans-serif-condensed" />
+        android:fontFamily="sans-serif-condensed"
+        android:textStyle="normal|bold" />
 
 </LinearLayout>

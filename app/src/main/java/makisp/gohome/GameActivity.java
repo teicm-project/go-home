@@ -40,6 +40,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.logging.Handler;
 
+import static makisp.gohome.LoginActivity.loggedIn;
 import static makisp.gohome.LoginActivity.onlineUser;
 
 public class GameActivity extends FragmentActivity implements OnMapReadyCallback,
@@ -88,6 +89,9 @@ public class GameActivity extends FragmentActivity implements OnMapReadyCallback
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        if(!loggedIn){
+            startActivity(new Intent(GameActivity.this, MainActivity.class));
+        }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
         PressItemButton();
@@ -171,6 +175,9 @@ public class GameActivity extends FragmentActivity implements OnMapReadyCallback
     ///// Όταν κάνει επαναφορά στον χάρτη εμφανίζει το σώστο σημάδι /////
     @Override
     protected void onResume() {
+        if(!loggedIn){
+            startActivity(new Intent(GameActivity.this, MainActivity.class));
+        }
         super.onResume();
         if((progress >= 2 && progress <= 5) && mMap != null) {
             visibleMarkers.get(progress - 1).setVisible(false);
@@ -209,7 +216,7 @@ public class GameActivity extends FragmentActivity implements OnMapReadyCallback
                         startActivity(new Intent(android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS));
                     }
                 })
-                .setNegativeButton("Όχι", new DialogInterface.OnClickListener() {
+                .setNegativeButton("Οχι", new DialogInterface.OnClickListener() {
                     public void onClick(final DialogInterface dialog, @SuppressWarnings("unused") final int id) {
                         dialog.cancel();
                     }
@@ -301,7 +308,7 @@ public class GameActivity extends FragmentActivity implements OnMapReadyCallback
 
     @Override
     public void onConnectionSuspended(int i) {
-        Toast.makeText(this, "Οι υπηρεσίες τοποθεσίας έχουν ανασταλεί. Παρακαλώ ξανά συνδεθείτε.", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "Οι υπηρεσίες τοποθεσίας έχουν ανασταλεί. Παρακαλώ συνδεθείτε ξανά.", Toast.LENGTH_LONG).show();
     }
 
     ///// Όποτε αλλάζει η τοποθεσία παίρνουμε τις συντεταγμένες του χρήστη /////
@@ -331,7 +338,7 @@ public class GameActivity extends FragmentActivity implements OnMapReadyCallback
                 e.printStackTrace();
             }
         }else{
-            Toast.makeText(this, "Οι υπηρεσίες τοποθεσίας έχουν ανασταλεί. Παρακαλώ ξανά συνδεθείτε" + connectionResult.getErrorCode(), Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Οι υπηρεσίες τοποθεσίας έχουν ανασταλεί. Παρακαλώ συνδεθείτε ξανά." + connectionResult.getErrorCode(), Toast.LENGTH_LONG).show();
         }
     }
 
