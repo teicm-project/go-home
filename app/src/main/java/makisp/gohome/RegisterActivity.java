@@ -17,7 +17,6 @@ public class RegisterActivity extends AppCompatActivity {
     Button btnAddData,btnAddData2;
     DbCredentials myDb = new DbCredentials(this);
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
