@@ -4,51 +4,57 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+
 
 
 public class ItemsActivity extends AppCompatActivity {
     public DbInventory myDb = new DbInventory(this);
-    public TextView textout;
+    public DbCredentials myDb2 = new DbCredentials(this);
 
-    ListView listameantikimena;
-    ArrayAdapter<String> adapter;
+    public ListView listameantikimena;
+    public ArrayAdapter<String> adapter;
+    public ArrayList<String>arrayList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_items);
 
-        Invetory e = new Invetory();
-        e.setActiveUser("p");
-        e.setItem("ΟΠΛΟ");
-        myDb.addItem(e);
-
-
-
+        //Μεταβλητή για να μάθω πόσες θέσει έχει ο πίνακας
         int i= 0;
         String [] items = new String[1000];
 
+        // Δημιουργία οπζεκτ για να ελέγχω την λίστα
+        listameantikimena = (ListView) findViewById(R.id.lista);
+        // λίστα
         List<Invetory> invetories = myDb.getAllItems();
         for(Invetory invetory : invetories){
-
+        // ευρεση του χριστη
             if(invetory.getActiveUser().equals(LoginActivity.onlineUser)){
-
                 items[i] = invetory.getItem();
                 i++;
             }
         }
-
-
-        textout = (TextView)findViewById(R.id.ena);
-        textout.setText(items[0]);
-
-
-
-
+        // Καινούριο στρινκγ
+        String [] newItems = new String[i];
+        int kapa;
+        // Μεταφορά των στοιχειών του πίνακα items στον πίνακα newItems
+         for(kapa=0;kapa<i;kapa++){
+         newItems[kapa] = items[kapa];
+        }
+       // addapter  για την εμφανιση στην λιστα
+        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, newItems);
+        listameantikimena.setAdapter(adapter);
 
     }
 }
