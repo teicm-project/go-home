@@ -22,29 +22,16 @@
         android:textSize="30sp"
         android:textAllCaps="true"
         android:textStyle="normal|bold"
-        android:textColor="@android:color/white" />
+        android:textColor="@android:color/white"
+        tools:ignore="UnusedAttribute" />
 
-    <TextView
+    <ListView
+        android:layout_height="450dp"
+        android:id="@+id/lista"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
+        android:layout_marginTop="44dp"
+        android:layout_below="@+id/textView15"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="21dp"
-        android:layout_marginStart="21dp"
-        android:layout_marginTop="75dp"
-        android:id="@+id/ena"
-        android:textAppearance="@style/TextAppearance.AppCompat.Button" />
+        android:layout_alignParentStart="true" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/dio"
-        android:textAppearance="@style/TextAppearance.AppCompat.Button"
-        android:layout_below="@+id/ena"
-        android:layout_alignLeft="@+id/ena"
-        android:layout_alignStart="@+id/ena"
-        android:layout_marginTop="34dp"
-        android:layout_alignRight="@+id/ena"
-        android:layout_alignEnd="@+id/ena" />
 </RelativeLayout>
