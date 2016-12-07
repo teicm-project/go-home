@@ -23,16 +23,16 @@
         android:textSize="30sp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:fontFamily="serif" />
+        android:fontFamily="sans-serif-condensed" />
 
     <TextView
         android:text="@string/scenario_story"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/scenario_story"
-        android:fontFamily="serif"
+        android:fontFamily="sans-serif-condensed"
         android:textColor="@color/cast_intro_overlay_background_color"
-        android:textSize="24sp"
+        android:textSize="18sp"
         android:layout_marginTop="34dp"
         android:width="300dp"
         android:layout_below="@+id/scenario_title"
@@ -40,33 +40,28 @@
         android:layout_alignParentEnd="true" />
 
     <Button
-        android:text="@string/button_choice2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/button_choice2"
-        android:layout_marginBottom="142dp"
-        android:layout_alignParentBottom="true"
-        android:layout_toRightOf="@+id/button_choice1"
-        android:layout_toEndOf="@+id/button_choice1"
-        android:layout_marginLeft="31dp"
-        android:layout_marginStart="31dp"
-        android:fontFamily="sans-serif-condensed"
-        android:textStyle="normal|bold"
-        style="@style/Widget.AppCompat.Button.Colored" />
-
-    <Button
         android:text="@string/button_choice1"
-        android:layout_width="wrap_content"
+        android:layout_width="275dp"
         android:layout_height="wrap_content"
         android:id="@+id/button_choice1"
-        android:layout_marginLeft="32dp"
-        android:layout_marginStart="32dp"
-        android:layout_alignBaseline="@+id/button_choice2"
-        android:layout_alignBottom="@+id/button_choice2"
-        android:layout_alignLeft="@+id/scenario_story"
-        android:layout_alignStart="@+id/scenario_story"
         android:fontFamily="sans-serif-condensed"
         android:textStyle="normal|bold"
-        style="@style/Widget.AppCompat.Button.Colored" />
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_above="@+id/button_choice2"
+        android:layout_alignLeft="@+id/button_choice2"
+        android:layout_alignStart="@+id/button_choice2" />
+
+    <Button
+        android:text="@string/button_choice2"
+        android:layout_width="275dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/button_choice2"
+        android:fontFamily="sans-serif-condensed"
+        android:textStyle="normal|bold"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_marginBottom="16dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/scenario_story"
+        android:layout_alignStart="@+id/scenario_story" />
 
 </RelativeLayout>

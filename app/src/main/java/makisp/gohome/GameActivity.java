@@ -203,7 +203,7 @@ public class GameActivity extends FragmentActivity implements OnMapReadyCallback
                     MarkerOptions markerOptions = new MarkerOptions();
                     markerOptions.position(latLon);
                     markerOptions.title("Quest");
-                    markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN));
+                    markerOptions.icon(BitmapDescriptorFactory.fromResource(R.drawable.quest128));
                     visibleMarkers.put(marker.getId(), mMap.addMarker(markerOptions));
                     if(marker.getId() != progress) {
                         visibleMarkers.get(marker.getId()).setVisible(false);

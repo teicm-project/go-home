@@ -165,6 +165,10 @@ public class ScenarioActivity extends AppCompatActivity {
 
             }
 
+            else{
+                Log.i("LogMessage", "Δεν βρέθηκε marker.");
+            }
+
         Button button_choice1 = (Button) findViewById(R.id.button_choice1);
 
             button_choice1.setOnClickListener(

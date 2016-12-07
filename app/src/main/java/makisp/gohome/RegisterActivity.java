@@ -8,14 +8,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import java.util.List;
-
 import static makisp.gohome.R.id.TextUserName;
 
 public class RegisterActivity extends AppCompatActivity {
     EditText editUserName,editPassword;
     Button btnAddData,btnAddData2;
     DbCredentials myDb = new DbCredentials(this);
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,27 +38,14 @@ public class RegisterActivity extends AppCompatActivity {
 
             String usernamestrr = editUserName.getText().toString();
             String passwordstrr = editPassword.getText().toString();
-             String Username_String ="oxi" ;
-
 
             editUserName.setText("");
             editPassword.setText("");
 
-             //Δήλωση λίστας
-             List<Credential> credentials = myDb.getAllCredentials();
+            String Username_String = myDb.SearchUsername(usernamestrr);
 
-             // Επανάληψη σε όλη την λίστα
 
-             for(Credential c : credentials){
-                //Έλεγχος εάν ο χριστής υπάρχει στην βάση
-
-                 if(c.getUsername().equals(usernamestrr)){
-                      Username_String = "nai";
-                 }
-
-            }
-
-            if (Username_String.equals("nai")) {
+            if (Username_String.equals(usernamestrr)) {
             Toast temp3 = Toast.makeText(RegisterActivity.this, "Ο χρήστης υπάρχει ήδη!", Toast.LENGTH_LONG);
             temp3.show();
 
@@ -70,6 +56,7 @@ public class RegisterActivity extends AppCompatActivity {
 
              Toast temp1 = Toast.makeText(RegisterActivity.this, "Κενό Username ή Password!", Toast.LENGTH_LONG);
              temp1.show();
+
              }
 
             else {
@@ -86,6 +73,8 @@ public class RegisterActivity extends AppCompatActivity {
               //  Βήμα 4
                myDb.addCredential(credential);
             }
+
+
          }
         }
         );

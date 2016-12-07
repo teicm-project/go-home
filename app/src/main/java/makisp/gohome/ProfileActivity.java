@@ -17,15 +17,18 @@ public class ProfileActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        if(!loggedIn){
+            startActivity(new Intent(ProfileActivity.this, MainActivity.class));
+        }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
         textout = (TextView)findViewById(R.id.ProfileView);
 
-//Οποίος  είναι OnlineUser τον δείχνει στο  Textview
+        //Οποίος  είναι OnlineUser τον δείχνει στο  Textview
         textout.setText(LoginActivity.onlineUser);
 
-//  Σε πηγαίνει στο  Login Activity (αποσύνδεση)
+        //  Σε πηγαίνει στο  Login Activity (αποσύνδεση)
         Button ProfileToLogin = (Button)findViewById(R.id.btnaposindesi);
         ProfileToLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,8 +56,13 @@ public class ProfileActivity extends AppCompatActivity {
         });
 
 
+    }
 
-
-
+    @Override
+    protected void onResume() {
+        if(!loggedIn){
+            startActivity(new Intent(ProfileActivity.this, MainActivity.class));
+        }
+        super.onResume();
     }
 }
