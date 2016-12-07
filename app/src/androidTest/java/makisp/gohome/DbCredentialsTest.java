@@ -265,4 +265,16 @@ public class DbCredentialsTest extends AndroidTestCase {
         Inventory item = dbCredentials.getItem(1);
         assertNull(item);
     }
+
+    /**
+     * Created by Iwanna Pantoyla on 6/12/2016.
+     */
+
+    @Test
+    public void testDeleteMarkers() throws Exception{
+        Markers deleteMarker = new Markers(1,1);
+        dbCredentials.deleteMarkers(deleteMarker);
+        Markers marker = dbCredentials.getMarker(1);
+        assertNull(marker);
+    }
 }

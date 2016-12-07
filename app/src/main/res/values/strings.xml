@@ -17,48 +17,68 @@
     <string name="buttonProfile">Προφιλ</string>
     <string name="scenario_title">Scenario Title</string>
     <string name="scenario_story">Scenario Story</string>
-    <string name="scenario_title1">Scenario 1</string>
-    <string name="scenario_story1">Πρώτη απόφαση</string>
-    <string name="scenario_title2">Scenario 2</string>
-    <string name="scenario_story2">Δευτερη απόφαση</string>
-    <string name="scenario_title3">Scenario 3</string>
-    <string name="scenario_story3">Τρίτη απόφαση</string>
-    <string name="scenario_title4">Scenario 4</string>
-    <string name="scenario_story4">Τέταρτη απόφαση</string>
-    <string name="scenario_title5">Scenario 5</string>
-    <string name="scenario_story5">Πέμπτη απόφαση</string>
-    <string name="scenario_title6">Scenario 6</string>
-    <string name="scenario_story6">Έκτη απόφαση</string>
-    <string name="scenario_title7">Scenario 7</string>
-    <string name="scenario_story7">Έβδομη απόφαση</string>
-    <string name="scenario_title8">Scenario 8</string>
-    <string name="scenario_story8">Όγοδοη απόφαση</string>
-    <string name="scenario_title9">Scenario 9</string>
-    <string name="scenario_story9">Ένατη απόφαση</string>
-    <string name="scenario_title10">Scenario 10</string>
-    <string name="scenario_story10">Δέκατη απόφαση</string>
+    <string name="scenario_title1">Το κυκλωμένο σημείο</string>
+    <string name="scenario_story1">Ρίχνοντας μια ματιά στο χάρτη παρατήρησες ένα σημείο κυκλωμένο.
+        Οι συντεταγμένες του είναι: 41.0900613,23.5523832. Μήπως έιναι κάποιο σημάδι για σένα;
+        Ποιός το κύκλωσε;</string>
+    <string name="scenario_title2">Ένα απρόσμενο μήνυμα</string>
+    <string name="scenario_story2">Καθώς προχωράς στο δρόμο βλέπεις στην άκρη του πεζοδρομίου
+        κολλημένο ένα χαρτάκι. Το σηκώνεις και βλέπεις πάνω του σημειωμένες αυτεσ τισ συντεταγμένες:
+        41.0918897,23.5524225. </string>
+    <string name="scenario_title3">Το μνημέιο</string>
+    <string name="scenario_story3">Οι συντεταγμένες οδηγούν σε αυτό το μνημείο. Πηγαίνοντας λίγο
+        πιο κοντά παρατηρείς το εξής σημείωμα: \"Δεν υπάρχει μνημείο πολιτισμού που δεν αποτελεί
+        συγχρόνως και μνημείο βαρβαρότητας.\" - Walter Benjamin, 1892 - 1940. Ποιος είναι άραγε
+        αυτός;
+        Η βιβλιοθήκη της πόλης μπορεί να σε βοηθήσει να μάθεις περισσότερα.</string>
+    <string name="scenario_title4">Στην βιβλιοθήκη</string>
+    <string name="scenario_story4">Φτάνεις στην βιβλιοθήκη και αμέσως βρίσκεις ένα βιβλίο για τον
+        Walter Benjamin. Το ανοίγεις και βλέπεις ότι στην εισαγωγή του βιβλίου είναι υπογραμμισμένη
+        αυτή η πρόταση: \"Ο Μπένγιαμιν αυτοκτόνησε στο Πορτμπού, στη μεθόριο Ισπανίας-Γαλλίας,
+        ενώ επιχειρούσε να διαφύγει από τους Ναζί.\"</string>
+    <string name="scenario_title5">Στο βιβλιοπωλείο</string>
+    <string name="scenario_story5">Σκεπτόμενος τον Benjamin καθώς προχωράς βλέπεις μπροστά σου ένα
+        βιβλιοπωλείο. Μπαίνεις μέσα και ψάχνεις για ένα βιβλίο σχετικά με τον Β Παγκόσμιο πόλεμο.</string>
+    <string name="scenario_title6">Απόγνωση</string>
+    <string name="scenario_story6">Φεύγεις πανικόβλητος και αποφασίζεις να πας στο σημείο που σε
+        άφησαν οι άγνωστοι άντρες. Παρατηρείς ένα κλειδί πάνω σε μια πόρτα που πριν δεν ήταν εκεί.</string>
+    <string name="scenario_title7">Η κρυπτογράφηση</string>
+    <string name="scenario_story7">Μπαίνοντας μέσα αντικρίζεις έναν μαυροπίνακα γεμάτο,
+        πρέπει να τον αποκωδικοποιήσεις. Στον Β Παγκόσμιο πόλεμο ο τρόπος που επικοινωνούσαν ήταν
+        ιδιαίτερος.</string>
+    <string name="scenario_title8"></string>
+    <string name="scenario_story8">Μετά από κάμποσες ώρες φτάνεις σε μια λύση,
+        το αποκρυπτογραφημένο μήνυμα είναι ένας κωδικός: 69723. Πίσω σου βρίσκεται ένα σεντούκι με
+        ένα λουκέτο.</string>
+    <string name="scenario_title9">Το αντικείμενο</string>
+    <string name="scenario_story9">Έκπληκτος βλέπεις ένα σακούλι γεμάτο με πανάρχαιες χρυσές λύρες.
+        Ίσως αυτό να θέλουν οι απαγωγείς...</string>
+    <string name="scenario_title10">Το ευχάριστο τέλος</string>
+    <string name="scenario_story10">Έφτασες σπίτι σου. Χτυπάς το κουδούνι και περιμένεις.
+        Μετά από λίγα δευτερόλεπτα σου ανοίγουν την πόρτα. Ανεβαίνεις τα σκαλιά πολύ προσεκτικά.
+        Αντικρύζεις τους απαγωγείς και τους δίνεις το σακούλι.</string>
     <string name="button_choice1">1Η ΕΠΙΛΟΓΗ</string>
     <string name="button_choice2">2Η ΕΠΙΛΟΓΗ</string>
-    <string name="button_choice11">ΑΑΗ ΕΠΙΛΟΓΗ</string>
-    <string name="button_choice21">ΒΒΗ ΕΠΙΛΟΓΗ</string>
-    <string name="button_choice12">ΑΗ ΕΠΙΛΟΓΗ</string>
-    <string name="button_choice22">ΒΗ ΕΠΙΛΟΓΗ</string>
-    <string name="button_choice13">ΑΗ ΕΠΙΛΟΓΗ</string>
-    <string name="button_choice23">ΒΗ ΕΠΙΛΟΓΗ</string>
-    <string name="button_choice14">ΑΗ ΕΠΙΛΟΓΗ</string>
-    <string name="button_choice24">ΒΗ ΕΠΙΛΟΓΗ</string>
-    <string name="button_choice15">ΑΗ ΕΠΙΛΟΓΗ</string>
-    <string name="button_choice25">ΒΗ ΕΠΙΛΟΓΗ</string>
-    <string name="button_choice16">ΑΗ ΕΠΙΛΟΓΗ</string>
-    <string name="button_choice26">ΒΗ ΕΠΙΛΟΓΗ</string>
-    <string name="button_choice17">ΑΗ ΕΠΙΛΟΓΗ</string>
-    <string name="button_choice27">ΒΗ ΕΠΙΛΟΓΗ</string>
-    <string name="button_choice18">ΑΗ ΕΠΙΛΟΓΗ</string>
-    <string name="button_choice28">ΒΗ ΕΠΙΛΟΓΗ</string>
-    <string name="button_choice19">ΑΗ ΕΠΙΛΟΓΗ</string>
-    <string name="button_choice29">ΒΗ ΕΠΙΛΟΓΗ</string>
-    <string name="button_choice110">ΑΗ ΕΠΙΛΟΓΗ</string>
-    <string name="button_choice210">ΒΗ ΕΠΙΛΟΓΗ</string>
+    <string name="button_choice11"> Ακολουθεις τις συντεταγμενες</string>
+    <string name="button_choice21">Αγνοεις το σημειο και συνεχιζεις</string>
+    <string name="button_choice12">Ακολουθεις τις συντεταγμενες και πετας το χαρτακι</string>
+    <string name="button_choice22">Ακολουθεις τις συντεταγμενες και κρατας το χαρτακι</string>
+    <string name="button_choice13">Ξεκινας για την βιβλιοθηκη</string>
+    <string name="button_choice23">Φευγεις από το μνημειο αναστατωμενος</string>
+    <string name="button_choice14">Δανειζεσαι το βιβλιο και φευγεις</string>
+    <string name="button_choice24">Κλεβεις το βιβλιο και φευγεις</string>
+    <string name="button_choice15">Παιρνεις γρηγορα το βιβλιο όταν δεν κοιταει κανεις</string>
+    <string name="button_choice25">Σκιζεις τις σελιδες που σε ενδιαφερουν</string>
+    <string name="button_choice16">Μπαινεις μεσα κανοντας ησυχια</string>
+    <string name="button_choice26">Μπαινεις μεσα βιαστικα</string>
+    <string name="button_choice17">Χρησιμοποιησε το βιβλιο που εχεις</string>
+    <string name="button_choice27">Προσπαθησε μονος σου</string>
+    <string name="button_choice18">Βαζεις τον κωδικο και το ανοιγεις</string>
+    <string name="button_choice28">Σπας το λουκετο με ενα παλιο τουβλο</string>
+    <string name="button_choice19">Παιρνεις το σακουλι και κατευθυνεσαι προς το σπιτι</string>
+    <string name="button_choice29">Παιρνεις το σακουλι και κατευθυνεσαι προς το σπιτι</string>
+    <string name="button_choice110">Τελος</string>
+    <string name="button_choice210">Τελος</string>
     <string name="text_username3">Ονομα:</string>
     <string name ="text_progress">Προοδος:</string>
 	<string name="text_username4">Ονομα:</string>
