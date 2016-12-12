@@ -23,18 +23,34 @@ public class ProfileActivityIntergrationTest extends ActivityInstrumentationTest
         super.setUp();
     }
 
+   // Τεστ για το textview που δείχνει το όνομα  του ον λινέ χριστή
+    @SmallTest
+    public void testProfileView(){
+        TextView tv = (TextView) getActivity().findViewById(R.id.ProfileView);
+        assertNotNull(tv);
+    }
 
+   // Τεστ για το κουμπί της αποσύνδεσης
     @SmallTest
     public void testBtnAposindesh(){
         Button btn = (Button)getActivity().findViewById(R.id.btnaposindesi);
         assertNotNull(btn);
         }
 
+    //τεστ  το textview  προφιλ
     @SmallTest
-    public void testProfileView(){
-        TextView tv = (TextView) getActivity().findViewById(R.id.ProfileView);
-        assertNotNull(tv);
+    public void testOnoma(){
+        TextView onoma = (TextView) getActivity().findViewById(R.id.textView14);
+        assertNotNull(onoma);
     }
+
+    //τεστ  το textview ονομα
+    @SmallTest
+    public void testprofil(){
+        TextView profil = (TextView) getActivity().findViewById(R.id.textView);
+        assertNotNull(profil);
+    }
+
 
 
     @Override
