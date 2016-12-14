@@ -15,26 +15,12 @@
         android:text="@string/button_start"
         android:layout_width="120dp"
         android:layout_height="50dp"
-        android:layout_marginTop="163dp"
         android:id="@+id/buttonStart"
         style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_below="@+id/textTitle"
-        android:layout_centerHorizontal="true"
         android:fontFamily="sans-serif-condensed"
-        android:textStyle="normal|bold" />
-
-    <TextView
-        android:text="@string/text_gohome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="19dp"
-        android:id="@+id/textTitle"
-        android:textAppearance="@style/TextAppearance.AppCompat.Button"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:textSize="30sp"
         android:textStyle="normal|bold"
-        android:fontFamily="sans-serif-condensed" />
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:text="@string/button_about"
@@ -43,8 +29,17 @@
         android:id="@+id/buttonAbout"
         style="@style/Widget.AppCompat.Button.Colored"
         android:fontFamily="sans-serif-condensed"
+        android:textStyle="normal|bold"
         android:layout_below="@+id/buttonStart"
         android:layout_alignLeft="@+id/buttonStart"
-        android:layout_alignStart="@+id/buttonStart"
-        android:textStyle="normal|bold" />
+        android:layout_alignStart="@+id/buttonStart" />
+
+    <ImageView android:src="@drawable/ghh"
+        android:layout_width="wrap_content"
+        android:layout_height="72dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="60dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 </RelativeLayout>

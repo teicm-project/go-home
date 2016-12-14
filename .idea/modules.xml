@@ -4,7 +4,6 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/go-home-master.iml" filepath="$PROJECT_DIR$/go-home-master.iml" />
-      <module fileurl="file://$PROJECT_DIR$/go-home-master 0.14.0.iml" filepath="$PROJECT_DIR$/go-home-master 0.14.0.iml" />
     </modules>
   </component>
 </project>
