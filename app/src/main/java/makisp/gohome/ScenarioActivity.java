@@ -7,10 +7,17 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+/**
+ *
+ * Created by Stergios Tselios on 2/12/2016.
+ *
+ */
+
 public class ScenarioActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scenario);
 
@@ -31,6 +38,7 @@ public class ScenarioActivity extends AppCompatActivity {
             }
 
             else if (GameActivity.progress == 2) {
+
                 TextView scenario_title = (TextView) findViewById(R.id.scenario_title);
                 scenario_title.setText(R.string.scenario_title2);
 
@@ -46,6 +54,7 @@ public class ScenarioActivity extends AppCompatActivity {
             }
 
             else if (GameActivity.progress == 3) {
+
                 TextView scenario_title = (TextView) findViewById(R.id.scenario_title);
                 scenario_title.setText(R.string.scenario_title3);
 
@@ -61,6 +70,7 @@ public class ScenarioActivity extends AppCompatActivity {
             }
 
             else if (GameActivity.progress == 4) {
+
                 TextView scenario_title = (TextView) findViewById(R.id.scenario_title);
                 scenario_title.setText(R.string.scenario_title4);
 
@@ -76,6 +86,7 @@ public class ScenarioActivity extends AppCompatActivity {
             }
 
             else if (GameActivity.progress == 5) {
+
                 TextView scenario_title = (TextView) findViewById(R.id.scenario_title);
                 scenario_title.setText(R.string.scenario_title5);
 
@@ -91,6 +102,7 @@ public class ScenarioActivity extends AppCompatActivity {
             }
 
             else if (GameActivity.progress == 6) {
+
                 TextView scenario_title = (TextView) findViewById(R.id.scenario_title);
                 scenario_title.setText(R.string.scenario_title6);
 
@@ -106,6 +118,7 @@ public class ScenarioActivity extends AppCompatActivity {
             }
 
             else if (GameActivity.progress == 7) {
+
                 TextView scenario_title = (TextView) findViewById(R.id.scenario_title);
                 scenario_title.setText(R.string.scenario_title7);
 
@@ -121,6 +134,7 @@ public class ScenarioActivity extends AppCompatActivity {
             }
 
             else if (GameActivity.progress == 8) {
+
                 TextView scenario_title = (TextView) findViewById(R.id.scenario_title);
                 scenario_title.setText(R.string.scenario_title8);
 
@@ -136,6 +150,7 @@ public class ScenarioActivity extends AppCompatActivity {
             }
 
             else if (GameActivity.progress == 9) {
+
                 TextView scenario_title = (TextView) findViewById(R.id.scenario_title);
                 scenario_title.setText(R.string.scenario_title9);
 
@@ -151,6 +166,7 @@ public class ScenarioActivity extends AppCompatActivity {
             }
 
             else if (GameActivity.progress == 10) {
+
                 TextView scenario_title = (TextView) findViewById(R.id.scenario_title);
                 scenario_title.setText(R.string.scenario_title10);
 
@@ -181,6 +197,7 @@ public class ScenarioActivity extends AppCompatActivity {
                             finish();
                         }
                     }
+
             );
 
             Button button_choice2 = (Button) findViewById(R.id.button_choice2);
@@ -195,7 +212,9 @@ public class ScenarioActivity extends AppCompatActivity {
                             finish();
                         }
                     }
+
             );
 
     }
+
 }
