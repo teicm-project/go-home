@@ -82,6 +82,8 @@ public class RegisterActivity extends AppCompatActivity {
                 credential.setProgress(1);
 
              Toast temp3 = Toast.makeText(RegisterActivity.this, "Επιτυχείς εγγραφή!", Toast.LENGTH_LONG);
+                Intent intent = new Intent(RegisterActivity.this,LoginActivity.class);
+                startActivity(intent);
              temp3.show();
 
               //  Βήμα 4

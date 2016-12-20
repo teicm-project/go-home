@@ -33,23 +33,13 @@
         android:fontFamily="sans-serif-condensed"
         android:textColor="@color/cast_intro_overlay_background_color"
         android:textSize="18sp"
-        android:layout_marginTop="34dp"
+        android:layout_marginTop="31dp"
         android:width="300dp"
         android:layout_below="@+id/scenario_title"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
-    <Button
-        android:text="@string/button_choice1"
-        android:layout_width="275dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/button_choice1"
-        android:fontFamily="sans-serif-condensed"
-        android:textStyle="normal|bold"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_above="@+id/button_choice2"
-        android:layout_alignLeft="@+id/button_choice2"
-        android:layout_alignStart="@+id/button_choice2" />
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="16dp"
+        android:layout_marginEnd="16dp" />
 
     <Button
         android:text="@string/button_choice2"
@@ -61,7 +51,21 @@
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_marginBottom="16dp"
         android:layout_alignParentBottom="true"
-        android:layout_alignLeft="@+id/scenario_story"
-        android:layout_alignStart="@+id/scenario_story" />
+        android:layout_alignLeft="@+id/button_choice1"
+        android:layout_alignStart="@+id/button_choice1" />
+
+    <Button
+        android:text="@string/button_choice1"
+        android:layout_width="275dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/button_choice1"
+        android:fontFamily="sans-serif-condensed"
+        android:textStyle="normal|bold"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_above="@+id/button_choice2"
+        android:layout_alignRight="@+id/scenario_story"
+        android:layout_alignEnd="@+id/scenario_story"
+        android:layout_marginRight="11dp"
+        android:layout_marginEnd="11dp" />
 
 </RelativeLayout>
