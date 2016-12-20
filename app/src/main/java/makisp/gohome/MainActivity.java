@@ -34,11 +34,16 @@ public class MainActivity extends AppCompatActivity {
         db2.getWritableDatabase();
 
 
-        db.addMarkers(new Markers(1, 41.0911159, 23.5498778));
-        db.addMarkers(new Markers(2, 41.0904367, 23.5504277));
-        db.addMarkers(new Markers(3, 41.0895821, 23.5501715));
-        db.addMarkers(new Markers(4, 41.0887493, 23.5496243));
-        db.addMarkers(new Markers(5, 41.0890383, 23.5489913));
+        db.addMarkers(new Markers(1, 41.088811, 23.547403));
+        db.addMarkers(new Markers(2, 41.089043, 23.548937));
+        db.addMarkers(new Markers(3, 41.0900613,23.5523832));
+        db.addMarkers(new Markers(4, 41.087889, 23.550977));
+        db.addMarkers(new Markers(5, 41.090249, 23.550382));
+        db.addMarkers(new Markers(6, 41.088811, 23.547403));
+        db.addMarkers(new Markers(7, 41.088811, 23.547403));
+        db.addMarkers(new Markers(8, 41.088811, 23.547403));
+        db.addMarkers(new Markers(9, 41.088811, 23.547403));
+        db.addMarkers(new Markers(10, 41.090847, 23.545691));
 
         Button buttonStart = (Button) findViewById(R.id.buttonStart);
 

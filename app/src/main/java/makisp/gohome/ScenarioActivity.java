@@ -28,6 +28,32 @@ public class ScenarioActivity extends AppCompatActivity {
                 Button button_choice2 = (Button) findViewById(R.id.button_choice2);
                 button_choice2.setText(R.string.button_choice21);
 
+                button_choice1.setOnClickListener(
+                        new Button.OnClickListener() {
+                            public void onClick(View v) {
+                                GameActivity.progress = GameActivity.progress + 2;
+                                String log = " " + GameActivity.progress;
+                                Log.d("progress::", log);
+                                MainActivity.db.updateProgress(GameActivity.cre, GameActivity.cre.getUsername(), GameActivity.progress);
+                                finish();
+                            }
+                        }
+
+                );
+
+                button_choice2.setOnClickListener(
+                        new Button.OnClickListener() {
+                            public void onClick(View v) {
+                                GameActivity.progress++;
+                                String log = " " + GameActivity.progress;
+                                Log.d("progress::", log);
+                                MainActivity.db.updateProgress(GameActivity.cre, GameActivity.cre.getUsername(), GameActivity.progress);
+                                finish();
+                            }
+                        }
+
+                );
+
             }
 
             else if (GameActivity.progress == 2) {
@@ -42,6 +68,33 @@ public class ScenarioActivity extends AppCompatActivity {
 
                 Button button_choice2 = (Button) findViewById(R.id.button_choice2);
                 button_choice2.setText(R.string.button_choice22);
+
+                button_choice1.setOnClickListener(
+                        new Button.OnClickListener() {
+                            public void onClick(View v) {
+                                GameActivity.progress++;
+                                String log = " " + GameActivity.progress;
+                                Log.d("progress::", log);
+                                MainActivity.db.updateProgress(GameActivity.cre, GameActivity.cre.getUsername(), GameActivity.progress);
+                                finish();
+                            }
+                        }
+
+                );
+
+                button_choice2.setOnClickListener(
+                        new Button.OnClickListener() {
+                            public void onClick(View v) {
+                                MainActivity.db.addItem(new Inventory(LoginActivity.activeUser, "Χαρτάκι"));
+                                GameActivity.progress++;
+                                String log = " " + GameActivity.progress;
+                                Log.d("progress::", log);
+                                MainActivity.db.updateProgress(GameActivity.cre, GameActivity.cre.getUsername(), GameActivity.progress);
+                                finish();
+                            }
+                        }
+
+                );
 
             }
 
@@ -58,6 +111,31 @@ public class ScenarioActivity extends AppCompatActivity {
                 Button button_choice2 = (Button) findViewById(R.id.button_choice2);
                 button_choice2.setText(R.string.button_choice23);
 
+                button_choice1.setOnClickListener(
+                        new Button.OnClickListener() {
+                            public void onClick(View v) {
+                                GameActivity.progress++;
+                                String log = " " + GameActivity.progress;
+                                Log.d("progress::", log);
+                                MainActivity.db.updateProgress(GameActivity.cre, GameActivity.cre.getUsername(), GameActivity.progress);
+                                finish();
+                            }
+                        }
+
+                );
+
+                button_choice2.setOnClickListener(
+                        new Button.OnClickListener() {
+                            public void onClick(View v) {
+                                GameActivity.progress = GameActivity.progress + 2;
+                                String log = " " + GameActivity.progress;
+                                Log.d("progress::", log);
+                                MainActivity.db.updateProgress(GameActivity.cre, GameActivity.cre.getUsername(), GameActivity.progress);
+                                finish();
+                            }
+                        }
+                );
+
             }
 
             else if (GameActivity.progress == 4) {
@@ -72,6 +150,33 @@ public class ScenarioActivity extends AppCompatActivity {
 
                 Button button_choice2 = (Button) findViewById(R.id.button_choice2);
                 button_choice2.setText(R.string.button_choice24);
+
+                button_choice1.setOnClickListener(
+                        new Button.OnClickListener() {
+                            public void onClick(View v) {
+                                GameActivity.progress = GameActivity.progress + 2;
+                                MainActivity.db.addItem(new Inventory(LoginActivity.activeUser, "Βιβλίο"));
+                                String log = " " + GameActivity.progress;
+                                Log.d("progress::", log);
+                                MainActivity.db.updateProgress(GameActivity.cre, GameActivity.cre.getUsername(), GameActivity.progress);
+                                finish();
+                            }
+                        }
+
+                );
+
+                button_choice2.setOnClickListener(
+                        new Button.OnClickListener() {
+                            public void onClick(View v) {
+                                GameActivity.progress = GameActivity.progress + 2;
+                                MainActivity.db.addItem(new Inventory(LoginActivity.activeUser, "Βιβλίο"));
+                                String log = " " + GameActivity.progress;
+                                Log.d("progress::", log);
+                                MainActivity.db.updateProgress(GameActivity.cre, GameActivity.cre.getUsername(), GameActivity.progress);
+                                finish();
+                            }
+                        }
+                );
 
             }
 
@@ -88,6 +193,34 @@ public class ScenarioActivity extends AppCompatActivity {
                 Button button_choice2 = (Button) findViewById(R.id.button_choice2);
                 button_choice2.setText(R.string.button_choice25);
 
+                button_choice1.setOnClickListener(
+                        new Button.OnClickListener() {
+                            public void onClick(View v) {
+                                GameActivity.progress++;
+                                MainActivity.db.addItem(new Inventory(LoginActivity.activeUser, "Βιβλίο"));
+                                String log = " " + GameActivity.progress;
+                                Log.d("progress::", log);
+                                MainActivity.db.updateProgress(GameActivity.cre, GameActivity.cre.getUsername(), GameActivity.progress);
+                                finish();
+                            }
+                        }
+
+                );
+
+                button_choice2.setOnClickListener(
+                        new Button.OnClickListener() {
+                            public void onClick(View v) {
+                                GameActivity.progress++;
+                                MainActivity.db.addItem(new Inventory(LoginActivity.activeUser, "Σκισμενες σελιδες"));
+                                String log = " " + GameActivity.progress;
+                                Log.d("progress::", log);
+                                MainActivity.db.updateProgress(GameActivity.cre, GameActivity.cre.getUsername(), GameActivity.progress);
+                                finish();
+                            }
+                        }
+
+                );
+
             }
 
             else if (GameActivity.progress == 6) {
@@ -102,6 +235,31 @@ public class ScenarioActivity extends AppCompatActivity {
 
                 Button button_choice2 = (Button) findViewById(R.id.button_choice2);
                 button_choice2.setText(R.string.button_choice26);
+
+                button_choice1.setOnClickListener(
+                        new Button.OnClickListener() {
+                            public void onClick(View v) {
+                                GameActivity.progress++;
+                                String log = " " + GameActivity.progress;
+                                Log.d("progress::", log);
+                                MainActivity.db.updateProgress(GameActivity.cre, GameActivity.cre.getUsername(), GameActivity.progress);
+                                finish();
+                            }
+                        }
+
+                );
+
+                button_choice2.setOnClickListener(
+                        new Button.OnClickListener() {
+                            public void onClick(View v) {
+                                GameActivity.progress++;
+                                String log = " " + GameActivity.progress;
+                                Log.d("progress::", log);
+                                MainActivity.db.updateProgress(GameActivity.cre, GameActivity.cre.getUsername(), GameActivity.progress);
+                                finish();
+                            }
+                        }
+                );
 
             }
 
@@ -118,6 +276,32 @@ public class ScenarioActivity extends AppCompatActivity {
                 Button button_choice2 = (Button) findViewById(R.id.button_choice2);
                 button_choice2.setText(R.string.button_choice27);
 
+                button_choice1.setOnClickListener(
+                        new Button.OnClickListener() {
+                            public void onClick(View v) {
+                                GameActivity.progress++;
+                                String log = " " + GameActivity.progress;
+                                Log.d("progress::", log);
+                                MainActivity.db.updateProgress(GameActivity.cre, GameActivity.cre.getUsername(), GameActivity.progress);
+                                finish();
+                            }
+                        }
+
+                );
+
+                button_choice2.setOnClickListener(
+                        new Button.OnClickListener() {
+                            public void onClick(View v) {
+                                GameActivity.progress++;
+                                String log = " " + GameActivity.progress;
+                                Log.d("progress::", log);
+                                MainActivity.db.updateProgress(GameActivity.cre, GameActivity.cre.getUsername(), GameActivity.progress);
+                                finish();
+                            }
+                        }
+
+                );
+
             }
 
             else if (GameActivity.progress == 8) {
@@ -132,6 +316,32 @@ public class ScenarioActivity extends AppCompatActivity {
 
                 Button button_choice2 = (Button) findViewById(R.id.button_choice2);
                 button_choice2.setText(R.string.button_choice28);
+
+                button_choice1.setOnClickListener(
+                        new Button.OnClickListener() {
+                            public void onClick(View v) {
+                                GameActivity.progress++;
+                                String log = " " + GameActivity.progress;
+                                Log.d("progress::", log);
+                                MainActivity.db.updateProgress(GameActivity.cre, GameActivity.cre.getUsername(), GameActivity.progress);
+                                finish();
+                            }
+                        }
+
+                );
+
+                button_choice2.setOnClickListener(
+                        new Button.OnClickListener() {
+                            public void onClick(View v) {
+                                GameActivity.progress++;
+                                String log = " " + GameActivity.progress;
+                                Log.d("progress::", log);
+                                MainActivity.db.updateProgress(GameActivity.cre, GameActivity.cre.getUsername(), GameActivity.progress);
+                                finish();
+                            }
+                        }
+
+                );
 
             }
 
@@ -148,6 +358,32 @@ public class ScenarioActivity extends AppCompatActivity {
                 Button button_choice2 = (Button) findViewById(R.id.button_choice2);
                 button_choice2.setText(R.string.button_choice29);
 
+                button_choice1.setOnClickListener(
+                        new Button.OnClickListener() {
+                            public void onClick(View v) {
+                                GameActivity.progress++;
+                                String log = " " + GameActivity.progress;
+                                Log.d("progress::", log);
+                                MainActivity.db.updateProgress(GameActivity.cre, GameActivity.cre.getUsername(), GameActivity.progress);
+                                finish();
+                            }
+                        }
+
+                );
+
+                button_choice2.setOnClickListener(
+                        new Button.OnClickListener() {
+                            public void onClick(View v) {
+                                GameActivity.progress++;
+                                String log = " " + GameActivity.progress;
+                                Log.d("progress::", log);
+                                MainActivity.db.updateProgress(GameActivity.cre, GameActivity.cre.getUsername(), GameActivity.progress);
+                                finish();
+                            }
+                        }
+
+                );
+
             }
 
             else if (GameActivity.progress == 10) {
@@ -163,39 +399,37 @@ public class ScenarioActivity extends AppCompatActivity {
                 Button button_choice2 = (Button) findViewById(R.id.button_choice2);
                 button_choice2.setText(R.string.button_choice210);
 
+                button_choice1.setOnClickListener(
+                        new Button.OnClickListener() {
+                            public void onClick(View v) {
+                                GameActivity.progress++;
+                                String log = " " + GameActivity.progress;
+                                Log.d("progress::", log);
+                                MainActivity.db.updateProgress(GameActivity.cre, GameActivity.cre.getUsername(), GameActivity.progress);
+                                finish();
+                            }
+                        }
+
+                );
+
+                button_choice2.setOnClickListener(
+                        new Button.OnClickListener() {
+                            public void onClick(View v) {
+                                GameActivity.progress++;
+                                String log = " " + GameActivity.progress;
+                                Log.d("progress::", log);
+                                MainActivity.db.updateProgress(GameActivity.cre, GameActivity.cre.getUsername(), GameActivity.progress);
+                                finish();
+                            }
+                        }
+
+                );
+
             }
 
             else{
                 Log.i("LogMessage", "Δεν βρέθηκε marker.");
             }
-
-        Button button_choice1 = (Button) findViewById(R.id.button_choice1);
-
-            button_choice1.setOnClickListener(
-                    new Button.OnClickListener() {
-                        public void onClick(View v) {
-                            GameActivity.progress++;
-                            String log = " " + GameActivity.progress;
-                            Log.d("progress::", log);
-                            MainActivity.db.updateProgress(GameActivity.cre, GameActivity.cre.getUsername(), GameActivity.progress);
-                            finish();
-                        }
-                    }
-            );
-
-            Button button_choice2 = (Button) findViewById(R.id.button_choice2);
-
-            button_choice2.setOnClickListener(
-                    new Button.OnClickListener() {
-                        public void onClick(View v) {
-                            GameActivity.progress++;
-                            String log = " " + GameActivity.progress;
-                            Log.d("progress::", log);
-                            MainActivity.db.updateProgress(GameActivity.cre, GameActivity.cre.getUsername(), GameActivity.progress);
-                            finish();
-                        }
-                    }
-            );
 
     }
 }
