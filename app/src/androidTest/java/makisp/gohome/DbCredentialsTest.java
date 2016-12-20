@@ -3,6 +3,7 @@ package makisp.gohome;
 import android.test.AndroidTestCase;
 
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -264,6 +265,94 @@ public class DbCredentialsTest extends AndroidTestCase {
         dbCredentials.deleteItem(itemToDelete);
         Inventory item = dbCredentials.getItem(1);
         assertNull(item);
+    }
+
+    @Test
+    public void testAddMarkerIsNotNull(){
+        Markers markers = new Markers();
+        markers.setId(1);
+        markers.setLatitude(59856.5);
+        markers.setLongitude(48595.5);
+        dbCredentials.addMarkers(markers);
+
+        Assert.assertNotNull(dbCredentials.getMarker(1));
+    }
+
+    @Test
+    public void testGetMarkerExpected(){
+        Markers expectedMarker = new Markers();
+        expectedMarker.setId(1);
+        expectedMarker.setLatitude(59856.5);
+        expectedMarker.setLongitude(48595.5);
+        dbCredentials.addMarkers(expectedMarker);
+
+        Markers actualMarker = dbCredentials.getMarker(1);
+
+        Assert.assertNotNull(actualMarker);
+        Assert.assertEquals(expectedMarker.getId(), actualMarker.getId());
+        Assert.assertEquals(expectedMarker.getLatitude(), actualMarker.getLatitude(), expectedMarker.getLatitude()-actualMarker.getLatitude());
+        Assert.assertEquals(expectedMarker.getLongitude(), actualMarker.getLongitude(), expectedMarker.getLongitude()-actualMarker.getLongitude());
+    }
+
+    @Test
+    public void testGetAllMarkersIsNotNull(){
+        dbCredentials.addMarkers(new Markers(2, 568.5, 598.4));
+        List<Markers> markersList = dbCredentials.getAllMarkers();
+
+        assertNotNull(markersList);
+    }
+
+    @Test
+    public void testGetAllMarkersIsInList() throws Exception{
+        int actualId = 0;
+        double actualLatitude=0, actualLongitude=0;
+        dbCredentials.addMarkers(new Markers(3, 568.5, 598.4));
+        List<Markers> markersList = dbCredentials.getAllMarkers();
+
+        for(Markers markers : markersList) {
+            actualId = markers.getId();
+            actualLatitude = markers.getLatitude();
+            actualLongitude = markers.getLongitude();
+            break;
+        }
+
+        assertEquals(1, actualId);
+        assertEquals(59856.5, actualLatitude);
+        assertEquals(48595.5, actualLongitude);
+    }
+
+    @Test
+    public void testGetMarkersCountIsNotNull() throws Exception{
+        int count;
+        count = dbCredentials.getMarkersCount();
+
+        assertNotNull(count);
+    }
+
+    @Test
+    public void testGetMarkersCountIs3() throws Exception{
+        int count;
+        count = dbCredentials.getMarkersCount();
+
+        assertEquals(3,count);
+    }
+
+    @Test
+    public void testUpdateMarker1RowUpdated() throws Exception{
+        int update;
+        Markers marker = new Markers(1, 56.5, 89.5);
+        update = dbCredentials.updateMarkers(marker);
+
+        assertEquals(1,update);
+    }
+
+    @Test
+    public void testUpdateMarker1RowUpdatedExpectedActual() throws Exception{
+        Markers updatedMarker = dbCredentials.getMarker(1);
+
+        assertEquals(1, updatedMarker.getId());
+        assertEquals(56.5, updatedMarker.getLatitude());
+        assertEquals(89.5, updatedMarker.getLongitude());
     }
 
     /**
