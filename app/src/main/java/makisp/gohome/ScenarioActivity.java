@@ -1,5 +1,6 @@
 package makisp.gohome;
 
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -69,6 +70,10 @@ public class ScenarioActivity extends AppCompatActivity {
                 Button button_choice2 = (Button) findViewById(R.id.button_choice2);
                 button_choice2.setText(R.string.button_choice22);
 
+                //Ήχος κατά την εκκίνηση του ScenarioActivity
+                final MediaPlayer mp = MediaPlayer.create(this, R.raw.steps);
+                mp.start();
+
                 button_choice1.setOnClickListener(
                         new Button.OnClickListener() {
                             public void onClick(View v) {
@@ -110,6 +115,10 @@ public class ScenarioActivity extends AppCompatActivity {
 
                 Button button_choice2 = (Button) findViewById(R.id.button_choice2);
                 button_choice2.setText(R.string.button_choice23);
+
+                //Ήχος κατά την εκκίνηση του ScenarioActivity
+                final MediaPlayer mp = MediaPlayer.create(this, R.raw.centre);
+                mp.start();
 
                 button_choice1.setOnClickListener(
                         new Button.OnClickListener() {
@@ -211,7 +220,7 @@ public class ScenarioActivity extends AppCompatActivity {
                         new Button.OnClickListener() {
                             public void onClick(View v) {
                                 GameActivity.progress++;
-                                MainActivity.db.addItem(new Inventory(LoginActivity.activeUser, "Σκισμενες σελιδες"));
+                                MainActivity.db.addItem(new Inventory(LoginActivity.activeUser, "Σκισμένες σελίδες"));
                                 String log = " " + GameActivity.progress;
                                 Log.d("progress::", log);
                                 MainActivity.db.updateProgress(GameActivity.cre, GameActivity.cre.getUsername(), GameActivity.progress);
@@ -244,6 +253,10 @@ public class ScenarioActivity extends AppCompatActivity {
                                 Log.d("progress::", log);
                                 MainActivity.db.updateProgress(GameActivity.cre, GameActivity.cre.getUsername(), GameActivity.progress);
                                 finish();
+
+                                //Ήχος κατά την εκκίνηση του ScenarioActivity
+                                final MediaPlayer mp = MediaPlayer.create(ScenarioActivity.this, R.raw.slowdoor);
+                                mp.start();
                             }
                         }
 
@@ -338,6 +351,10 @@ public class ScenarioActivity extends AppCompatActivity {
                                 Log.d("progress::", log);
                                 MainActivity.db.updateProgress(GameActivity.cre, GameActivity.cre.getUsername(), GameActivity.progress);
                                 finish();
+
+                                //Ήχος κατά την εκκίνηση του ScenarioActivity
+                                final MediaPlayer mp = MediaPlayer.create(ScenarioActivity.this, R.raw.breaklock);
+                                mp.start();
                             }
                         }
 
