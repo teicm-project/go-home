@@ -18,8 +18,7 @@ import java.util.List;
 
 
 public class ItemsActivity extends AppCompatActivity {
-    public DbInventory myDb = new DbInventory(this);
-    public DbCredentials myDb2 = new DbCredentials(this);
+    public DbCredentials myDb = new DbCredentials(this);
 
     public ListView listameantikimena;
     public ArrayAdapter<String> adapter;
@@ -32,16 +31,18 @@ public class ItemsActivity extends AppCompatActivity {
 
         //Μεταβλητή για να μάθω πόσες θέσεις έχει ο πίνακας
         int i= 0;
-        String [] items = new String[1000];
+        String [] items = new String[10];
 
         // Δημιουργία οπζεκτ για να ελέγχω την λίστα
         listameantikimena = (ListView) findViewById(R.id.lista);
 
         // λίστα
-        List<Invetory> invetories = myDb.getAllItems();
-        for(Invetory invetory : invetories){
+        List<Inventory> invetories = myDb.getAllItems();
+        for(Inventory invetory : invetories){
         // ευρεση του χριστη
-            if(invetory.getActiveUser().equals(LoginActivity.onlineUser)){
+            Log.i("Inventory: ", String.valueOf(invetory.getActiveUser()));
+            Log.i("Active: ", String.valueOf(LoginActivity.activeUser));
+            if(invetory.getActiveUser().equals(LoginActivity.activeUser)){
                 items[i] = invetory.getItem();
                 i++;
             }

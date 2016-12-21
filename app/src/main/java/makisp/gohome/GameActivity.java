@@ -380,7 +380,7 @@ public class GameActivity extends FragmentActivity implements OnMapReadyCallback
         double c = 2 * Math.asin(Math.sqrt(a));
         double finalDistance = Radius * c * 1000;
 
-        if(finalDistance <= 50.0){
+        if(finalDistance <= 500.0){
             return true;
         }
         else{
