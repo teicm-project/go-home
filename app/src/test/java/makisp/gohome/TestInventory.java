@@ -7,6 +7,7 @@ import org.junit.Test;
  * Created by Ευάγγελος Πετρόπουλος on 20/12/2016.
  */
 
+///// JUnit Tests /////
 public class TestInventory {
     Inventory inventory = new Inventory();
     Inventory usernameInventory = new Inventory(1, "Ευάγγελος", "Φτιάρι");

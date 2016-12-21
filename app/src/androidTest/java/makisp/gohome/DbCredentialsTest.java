@@ -13,6 +13,7 @@ import java.util.List;
  * Created by Ευάγγελος Πετρόπουλος on 4/12/2016.
  */
 
+///// Instrumented Tests /////
 public class DbCredentialsTest extends AndroidTestCase {
     private DbCredentials dbCredentials;
     private Credential credential;
