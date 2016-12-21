@@ -7,6 +7,7 @@ import org.junit.Test;
  * Created by Ευάγγελος Πετρόπουλος on 20/12/2016.
  */
 
+///// JUnit Tests /////
 public class TestMarkers {
     Markers marker = new Markers();
     Markers IDMarker = new Markers(1, 89.4, 78.3);
